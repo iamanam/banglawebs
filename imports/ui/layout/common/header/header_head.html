@@ -1,0 +1,36 @@
+<template name="okay_nav">
+</template>
+<template name="header_head">
+    <section class="header-head header" id="header">
+
+        <span class="slide-menu">
+            <a id="js-berger-menu" href="#menu" class="berger-menu"><span
+                    class="berger-menu__icon"></span></a></span>
+        <nav role="navigation" id="nav-main" class="okayNav">
+            <ul>
+                <li>
+                    <a href="{{pathFor '/'}}">Home</a>
+                </li>
+                <li>
+                    <a href="#menu">services</a>
+                </li>
+                <li>
+                    <a href="{{pathFor '/products'}}">Products</a>
+                </li>
+                <li>
+                    <a href="{{pathFor '/guide'}}">Guide</a>
+                </li>
+                <li>
+                    <a href="{{pathFor '/contact'}}">Contact</a>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="logo">
+            <img src="/img/logo_small.png"/>
+        </div>
+
+    </section>
+</template>
+
+

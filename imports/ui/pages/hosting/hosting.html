@@ -1,0 +1,145 @@
+<template name="hosting">
+    <div id="main-page-content">
+        <div class="feature-block">
+            <section class="intro-service">
+                <h3><i class="fa fa-quote-left"></i> We help you to design the best product for your growing customer.
+                    Our
+                    workers are
+                    expirenced
+                    enough to review, prototype and design the best possible work you can imagine.<i
+                            class="fa fa-quote-right"></i>
+                </h3>
+            </section>
+
+        </div>
+        <div class="feature-block">
+            <section class="service-img-description">
+                <div class="work-flow-content">
+                    <ul>
+                        <li>
+                            <figure class="service-item-1">
+                                <p><img src="/img/hosting/service-icon-1.png" alt=""></p>
+                                <figcaption>Hosted desktops</figcaption>
+                            </figure>
+                        </li>
+                        <li>
+                            <figure class="service-item-2">
+                                <p><img src="/img/hosting/service-icon-2.png" alt=""></p>
+                                <figcaption>Hosted servers</figcaption>
+                            </figure>
+
+                        </li>
+                        <li>
+                            <figure class="service-item-3">
+                                <p><img src="/img/hosting/service-icon-3.png" alt=""></p>
+                                <figcaption>Hosted applications</figcaption>
+                            </figure>
+
+                        </li>
+                        <li>
+                            <figure class="service-item-4">
+                                <p><img src="/img/hosting/service-icon-4.png" alt=""></p>
+                                <figcaption>Online support</figcaption>
+                            </figure>
+
+                        </li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+        <div class="feature-block">
+            <div class="pricing-div">
+                <h2><strong>Site </strong> <span> features included but not limited to</span></h2>
+
+                <div class="view-pricing">
+                    {{#each packageTotal}}
+                        {{>blockPrice title=title price=price icon=icon features=featurePack }}
+                    {{/each}}
+                </div>
+            </div>
+
+        </div>
+
+        <!--- feature block end-->
+
+
+        <div class="feature-block">
+            <section class="service-text-description">
+                <h2><strong>Great </strong> <span>work go through the right work flow.</span></h2>
+
+                <div class="description-content">
+                    <div class="des-title-side">
+                        what we mean by web desgin
+                    </div>
+                    <h3>
+                        The term "web design" is a little misleading. Banglawebs is a full-service web design
+                        and
+                        development company. We don't just design the look of the site. We also build
+                        interactive
+                        features that may or may not require a database. We can help you establish a web hosting
+                        account
+                        that meets the technical specifications of your new site or we can work with your
+                        existing
+                        server </h3>
+                </div>
+            </section>
+            <section class="service-text-description">
+
+                <div class="description-content">
+                    <div class="des-title-side">
+                        special treat for local customers
+                    </div>
+                    <h3>
+                        Banglawebs is based in Dhaka, Bangladesh. We'll meet with anyone based in Dhaka and
+                        will travel to other parts of the Bangladesh if its necessary. We enjoy meeting our
+                        clients face
+                        to face and
+                        will make as many visits to your office as necessary. After your web site launches,
+                        we'll
+                        schedule a training session so we can educate you on how to get the most from your new
+                        site.
+                    </h3>
+                </div>
+            </section>
+            <section class="service-text-description">
+
+                <div class="description-content">
+                    <div class="des-title-side">
+                        consultation over internet
+                    </div>
+                    <h3> anytime to discuss your web site development needs. Banglawebs will give you free
+                        advice
+                        regarding your situation. We will discuss your goals and provide you a free estimate for
+                        your
+                        web design or development project. We will also visit you at your place of business
+                        anywhere in
+                        Metro Atlanta.
+                    </h3>
+                </div>
+            </section>
+            <section class="service-text-description">
+                {{> contact_service_end}}
+            </section>
+
+        </div>
+
+    </div>
+
+</template>
+<template name="blockPrice">
+    <div class="price-item">
+        <h4 class="title-package">{{title}}</h4>
+        <h4 class="price-package">{{price}}</h4>
+        <section class="feature-block">
+            <span class="field-icon">
+                <p><i class="icon-package {{icon}}"></i>
+                </p>
+            </span>
+            <ul>
+                {{#each feature in features}}
+                    <li class="feature">{{feature}}</li>
+                {{/each}}
+            </ul>
+        </section>
+    </div>
+</template>

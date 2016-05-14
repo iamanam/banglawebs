@@ -1,0 +1,4 @@
+node_modules/
+/.atom
+/.meteor/local
+/.idea

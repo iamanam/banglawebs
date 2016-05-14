@@ -1,0 +1,17 @@
+{
+  "name": "banglaweb",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "meteor-node-stubs": "^0.2.3"
+  },
+  "devDependencies": {
+    "tern-meteor": "^1.0.6"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "iamanam",
+  "license": "ISC",
+  "description": ""
+}

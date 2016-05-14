@@ -1,0 +1,77 @@
+@import 'jeet'
+@import "rupture"
+@import "./fonts.styl"
+@import "./constant.styl"
+
+html
+  height: 100%;
+  box-sizing: border-box;
+  font-size 1.5vw
+  +below(2)
+    font-size 2.5vw
+  +below(1)
+    font-size 3.5vw
+
+*, *:before, *:after
+  box-sizing: inherit
+
+/* Main styles begin here */
+Body
+  background-color: $color_main
+  font-size 100%
+  font-family: "Advent pro"
+  position: relative
+  min-height: 100%
+
+//the div#header which contain header-head,header-main,header-tail
+footer
+  padding: 10px
+  border-top: 5px solid rgba(43, 134, 113, 0.4)
+  text-align: center
+  height: auto
+  font-family: 'Advent Pro'
+  p
+    display inline-block
+    &:after
+      display inline-block
+      content ""
+      width 5px
+      background #257160
+      height 15px
+      margin 3px 5px 0 5px
+
+  .total_link
+    width: 100%
+    display: block
+    padding: 0
+    position: relative
+    font-size: 70%
+    margin: 10px 0 20px 0
+    div.cat
+      min-width: 20%
+      width: auto
+      list-style: none
+      display: inline-block
+      padding: 0
+      margin: 0
+      border: 2px solid #25A084
+      span
+        display: block
+        margin: 10px 0
+        a
+          text-decoration: none
+          font-size: 120%
+          text-align: center
+          color: white
+      ul
+        list-style: none
+        text-align: center
+        padding: 0
+        margin: 0
+        width: 100%
+        & > li
+          display: block
+          margin: 10px 0
+          a
+            text-decoration: none;
+            color: black

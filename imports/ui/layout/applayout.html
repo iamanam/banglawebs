@@ -1,0 +1,16 @@
+<head>
+    <title>Bangla-web</title>
+</head>
+<body>
+{{> mmenu}}
+</body>
+<template name="applayout">
+    <div class="page">
+        {{> Template.dynamic template=top}}
+        <div id="container">
+            {{> Template.dynamic template=main}}
+        </div>
+        {{> Template.dynamic template=footer}}
+    </div>
+</template>
+<!----------------------------------------------------------template typedElement-------------------------------------------------------------->
