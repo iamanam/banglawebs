@@ -23,7 +23,7 @@ FlowRouter.route("/products/fastrackbd", {
  Routes for fastrack admin groups
  */
 let adminRoutes = FlowRouter.group({
-    prefix: "/xx/",
+    prefix: "/admin",
     name: "admin"
 });
 
