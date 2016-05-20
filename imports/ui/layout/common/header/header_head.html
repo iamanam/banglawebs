@@ -1,5 +1,3 @@
-<template name="okay_nav">
-</template>
 <template name="header_head">
     <section class="header-head header" id="header">
 
@@ -32,5 +30,39 @@
 
     </section>
 </template>
+<template name="okay_nav">
+</template>
 
+<template name="header_store">
+    <header>
+        <section class="header-head header" id="header">
+                <span class="slide-menu">
+            <a id="js-berger-menu" href="#menu" class="berger-menu"><span
+                    class="berger-menu__icon"></span></a></span>
+            <nav role="navigation" id="nav-main" class="okayNav">
+                <ul>
+                    <li>
+                        <a href="{{pathFor '/products/fastrackbd'}}">Home</a>
+                    </li>
+                    <li>
+                        <a href="{{pathFor '/products/fastrackbd'}}">Products</a>
+                    </li>
+                    <li>
+                        <a href="{{pathFor '/admin/fastrack'}}">Admin</a>
+                    </li>
+                    <li>
+                        <a href="{{pathFor '/products/fastrackbd/order'}}">order</a>
+                    </li>
+                    <li>
+                        <a href="{{pathFor '/contact'}}">Contact</a>
+                    </li>
+                </ul>
+            </nav>
 
+            <div class="logo">
+                <h3>Fastrackbd</h3>
+            </div>
+
+        </section>
+    </header>
+</template>

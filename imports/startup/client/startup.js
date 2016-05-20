@@ -5,4 +5,4 @@ import {
     BlazeLayout
 } from 'meteor/kadira:blaze-layout';
 
-//import "meteor/mquandalle:stylus";
+import { check } from "meteor/check";

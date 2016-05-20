@@ -1,15 +1,20 @@
 <template name="contact">
     <div id="contact-page">
         <div id="contact">
+            <!--
             <label>
                 <i class="fa fa-envelope-o"></i>send a message!!</label>
-
             <form>
                 <label>Email</label>
-                <input type="email" placeholder="NAME@EMAIL.COM" required=""/>
+                <input type="email" placeholder="NAME@EMAIL.COM" required="" />
                 <textarea cols="30%" rows="10" placeholder="Put anything regarding our service"></textarea>
-                <input type="submit" placeholder="Submit"/>
+                <input type="submit" placeholder="Submit" />
             </form>
+          -->
+            <fieldset>
+                <legend>Contact Us</legend>
+                {{> quickForm schema="ContactSchema" id="SendMail" type="normal"}}
+            </fieldset>
         </div>
         <div id="contact-info">
             <h4>

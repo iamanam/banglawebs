@@ -5,13 +5,11 @@ import "../component/mmenu.html";
 
 import "./applayout.html";
 
-Template.applayout.rendered = function () {
-    "use strict";
-    $("#menu").mmenu({});
-    $("#mm-blocker").click(function () {
-        if ($("#js-berger-menu").hasClass("open")) {
-            $("#js-berger-menu").trigger("click")
-        }
-    })
+Template.applayout.rendered = function() {
+  $("#menu").mmenu({});
+  $("#mm-blocker").click(function() {
+    if ($("#js-berger-menu").hasClass("open")) {
+      $("#js-berger-menu").trigger("click");
+    }
+  });
 };
-

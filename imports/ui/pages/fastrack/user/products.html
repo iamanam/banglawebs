@@ -1,0 +1,56 @@
+<template name="fastrackbd_pro">
+    <div class="product-gallery-pro">
+        <h1>Watches</h1>
+        <nav class="product-filter">
+            <div class="sort">
+                <div class="collection-sort">
+                    <label>Filter by:</label>
+                    <select>
+                        <option value="/">All watches</option>
+                        <option value="/">2016</option>
+                        <option value="/">Fastrack</option>
+                        <option value="/">Casio</option>
+                        <option value="/">Titan</option>
+                        <option value="/">loureals</option>
+                        <option value="/">Other</option>
+                    </select>
+                </div>
+
+                <div class="collection-sort">
+                    <label>Sort by:</label>
+                    <select>
+                        <option value="/">Featured</option>
+                        <option value="/">Best Selling</option>
+                        <option value="/">Price, low to high</option>
+                        <option value="/">Price, high to low</option>
+                        <option value="/">Date, new to old</option>
+                        <option value="/">Date, old to new</option>
+                    </select>
+                </div>
+            </div>
+        </nav>
+
+        <section class="products">
+            {{#each productsAll}}
+                <div class="product-card">
+                    <div class="product-image">
+                        <img src="/{{imageUrl}}" title={{title}}>
+                    </div>
+                    <div class="product-info">
+                        <h5>
+                            <a href="#">{{title}}</a>
+                        </h5>
+                        <h6>{{priceTaka}}
+                            Tk</h6>
+                    </div>
+                    <div class="product-info">
+                        <button class="order" value="order" title="order">
+                            <a href="{{pathFor '/products/fastrackbd/order/'}}/{{_id}}">Order</a>
+                        </button>
+                    </div>
+                </div>
+            {{/each}}
+
+        </section>
+    </div>
+</template>

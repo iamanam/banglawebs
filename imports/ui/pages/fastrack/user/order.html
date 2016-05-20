@@ -1,0 +1,19 @@
+<template name="fastrackbd_order">
+    <div class="fastrack_store">
+        {{#autoForm collection="Order" id="insertOrder" type="normal"}}
+        <fieldset>
+            <legend>Fill up to put your order</legend>
+            {{> afQuickField name='mobile'}} {{> afQuickField name='OrderType' options='allowed'}} {{> afQuickField name='bkash'}} {{> afQuickField name="choose" options="allowed"}}
+        </fieldset>
+        <button type="submit" class="btn btn-primary">Order</button>
+        {{/autoForm}}
+        <div class="view-pro-less">
+            {{#with thisProduct}}
+            <p>{{title}}</p>
+            <img src="{{imageUrl}}" title="{{title}}">
+            <p>Price {{priceTaka}}tk
+            </p>
+            {{/with}}
+        </div>
+    </div>
+</template>
