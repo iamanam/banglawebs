@@ -32,23 +32,23 @@
 
         <section class="products">
             {{#each productsAll}}
-                <div class="product-card">
-                    <div class="product-image">
-                        <img src="/{{imageUrl}}" title={{title}}>
-                    </div>
-                    <div class="product-info">
-                        <h5>
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="{{imageUrl}}" title={{title}}>
+                </div>
+                <div class="product-info">
+                    <h5>
                             <a href="#">{{title}}</a>
                         </h5>
-                        <h6>{{priceTaka}}
+                    <h6>{{priceTaka}}
                             Tk</h6>
-                    </div>
-                    <div class="product-info">
-                        <button class="order" value="order" title="order">
-                            <a href="{{pathFor '/products/fastrackbd/order/'}}/{{_id}}">Order</a>
-                        </button>
-                    </div>
                 </div>
+                <div class="product-info">
+                    <button class="order" value="order" title="order">
+                        <a href="{{pathFor '/products/fastrackbd/order/'}}/{{_id}}">Order</a>
+                    </button>
+                </div>
+            </div>
             {{/each}}
 
         </section>

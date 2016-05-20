@@ -36,9 +36,3 @@ AutoForm.hooks({
         }
     }
 });
-
-Template.fastrackbd_order.events({
-    "submit #insertOrder ": function (e) {
-        e.preventDefault();
-    }
-})

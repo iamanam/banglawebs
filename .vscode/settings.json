@@ -1,0 +1,12 @@
+// Place your settings in this file to overwrite default and user settings.
+{
+    "meteorhelper.meteorPath":"%USERPROFILE%\\AppData\\Local\\.meteor\\meteor.bat"
+    
+}
+/*
+* meteorhelper.meteorPath: path to the Meteor executable (e.g. /usr/local/bin/meteor on the Mac or %USERPROFILE%\\AppData\\Local\\.meteor\\meteor.bat on Windows
+* meteorhelper.meteorPort: port to be used when running the Meteor process (defaults to 3000)
+* meteorhelper.meteorSettings: Relative path to the Meteor settings JSON file, e.g. app/settings/settings.debug.json
+* meteorhelper.relativeProjectPath: Relative path to your Meteor application, e.g. app
+* meteorhelper.testConfiguration: test configuration settings
+*/
