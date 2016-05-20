@@ -7,9 +7,6 @@ if (Meteor.isClient) {
     Template.loginButtons.rendered=() => {
         if(Meteor.userId()){
             x=$("#login-buttons");
-            Meteor.setTimeOut=func()=>{
-                x.html("<div class='login-link-and-dropdown-list fa fa-user'><a class='#'></a></div>");
-            },2000);
             console.log(this,$("#login-buttons"),x.children());
 
         }
