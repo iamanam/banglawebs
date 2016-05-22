@@ -1,5 +1,5 @@
-FlowRouter.route("/products/fastrackbd/order/:id", {
-    action: function (pram, queryParam) {
+FlowRouter.route("/fastrackbd/order/:id", {
+    action: function(pram, queryParam) {
         require("/imports/ui/pages/fastrack/user/order.js");
         BlazeLayout.render("applayout", {
             top: "header_store",
@@ -9,8 +9,8 @@ FlowRouter.route("/products/fastrackbd/order/:id", {
     }
 });
 
-FlowRouter.route("/products/fastrackbd", {
-    action: function () {
+FlowRouter.route("/fastrackbd", {
+    action: function() {
         require("/imports/ui/pages/fastrack/user/products.js");
         BlazeLayout.render("applayout", {
             top: "header_store",

@@ -17,10 +17,12 @@ header
     font-family 'Advent Pro'
     justify-content space-between
     #nav-main
-      width 80%
+      flex-basis 80%
       display flex
       align-items center
       justify-content center
+    +below(3)
+       flex-basis 65%
       .okayNav__menu-toggle
         top: 0
   .slide-menu
@@ -31,6 +33,8 @@ header
     background: #209A7E
     display: flex
     align-items: center
+    +below(3)
+      flex-basis 20%
   .logo
     flex-basis: 10%
     display: flex;
@@ -42,6 +46,9 @@ header
     img
       height: 65px
       padding: 5px
+    +below(3)
+      width 100%
+      height auto
     +below(2)
       height 100%
       width 100%

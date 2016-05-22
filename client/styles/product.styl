@@ -1,15 +1,20 @@
 .product-gallery-pro
   max-width: 960px
   margin: 0 auto
+  font-family sans-serif
   h1
     font-size 35px
     font-weight 300
     flex 1
   h5
     font-weight 500
-    line-height 1.3em
-    font-size: 1.5rem
+    line-height 1.2rem
+    font-size: 1rem
     margin: 5px
+    +below(3)
+      font-size 115%
+    +below(2)
+      font-size 125%
   h6
     color #666
     font-size 18px
@@ -27,7 +32,7 @@
       padding-right 20px
   label
     color #666
-    font-size 10px
+    font-size 1rem
     font-weight 500
     line-height 2em
     text-transform uppercase
@@ -49,7 +54,9 @@
     img
       width auto
       margin: 0 auto
-
+      max-height 270px
+      max-width 210px
+      overflow hidden
   .product-info
     margin-top: auto
     padding-top: 20px
