@@ -5,3 +5,4 @@ import "./products/products";
 import "./order/method";
 import "./order/orderPublish";
 import "./sendEmailMethod";
+import "./user-accounts";

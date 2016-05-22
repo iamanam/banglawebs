@@ -1,4 +1,4 @@
-import "../../ui/layout/layout";
+import "../../ui/layout/appLayout";
 import "./fastrack_routes";
 
 if (Meteor.isClient) {

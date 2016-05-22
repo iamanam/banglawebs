@@ -1,5 +1,6 @@
 /**
  * Created by iaman on 5/8/2016.
  */
-import "./login-config";
+import "meteor/mdg:validated-method";
+import "./user-config";
 import "/imports/api/server/index";

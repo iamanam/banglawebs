@@ -1,14 +1,8 @@
-import "./header_head.html";
-import "./header_main.html";
-import "./header_footer.html";
-import "./header.html";
-
 if (Meteor.isClient) {
     Template.loginButtons.rendered=() => {
         if(Meteor.userId()){
             x=$("#login-buttons");
-            console.log(this,$("#login-buttons"),x.children());
-
+            console.log(this,$("#login-buttons"));
         }
     };
     Template.header_head.rendered = function() {

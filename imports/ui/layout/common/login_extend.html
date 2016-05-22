@@ -1,0 +1,14 @@
+<template name="_loginButtonsLoggedInDropdown_overide">
+    <div class="login-link-and-dropdown-list">
+        <a class="login-link-text fa fa-user fa-2x" id="login-name-link">
+        </a> {{#if dropdownVisible}}
+        <div id="login-dropdown-list" class="accounts-dialog">
+            <a class="login-close-text">
+                <p>{{displayName}}</p><i class='fa fa-close'></i></a>
+            <div class="login-close-text-clear"></div>
+            {{#if inMessageOnlyFlow}} {{> _loginButtonsMessages}} {{else}} {{#if inChangePasswordFlow}} {{> _loginButtonsChangePassword}} {{else}} {{> _loginButtonsLoggedInDropdownActions}}
+            {{/if}} {{/if}}
+        </div>
+        {{/if}}
+    </div>
+</template>
