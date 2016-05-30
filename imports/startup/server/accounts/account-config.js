@@ -17,15 +17,7 @@ if(Meteor.isServer){
 /**
 Outh service configurations
 */
-    ServiceConfiguration.configurations.remove({
-        service: "facebook"
-    });
 
-    ServiceConfiguration.configurations.insert({
-        service: Meteor.settings.private.facebook.service,
-        appId: Meteor.settings.private.facebook.appId,
-        secret: Meteor.settings.private.facebook.api
-    });
   /**
    * Created by iaman on 5/8/2016.
    */
@@ -46,4 +38,16 @@ Outh service configurations
         return true;
     });
 
+}
+
+if(Meteor.isServer){
+    ServiceConfiguration.configurations.remove({
+        service: "facebook"
+    });
+
+    ServiceConfiguration.configurations.insert({
+        service: Meteor.settings.facebook.service,
+        appId: Meteor.settings.facebook.appId,
+        secret: Meteor.settings.facebook.api
+    });
 }

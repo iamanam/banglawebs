@@ -1,17 +1,18 @@
 {
   "name": "banglaweb",
   "version": "0.9.0",
-  "main": "index.js",
+  "private": true,
+  "git":"https://github.com/iamanam/banglawebs",
+    "scripts": {
+    "start": "meteor --port 3004"
+  },
   "dependencies": {
     "meteor-node-stubs": "^0.2.3"
   },
   "devDependencies": {
     "tern-meteor": "^1.0.6"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "author": "iamanam",
   "license": "ISC",
-  "description": ""
+  "description": "a production of banglawebs"
 }
