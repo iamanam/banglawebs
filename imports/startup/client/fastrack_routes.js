@@ -1,17 +1,11 @@
-FlowRouter.route("/fastrackbd/order/:id", {
-    action: function(pram, queryParam) {
-        require("/imports/ui/pages/fastrack/user/order.js");
-        BlazeLayout.render("applayout", {
-            top: "header_store",
-            main: "fastrackbd_order",
-            footer: "footer"
-        });
-    }
+const fastrackRoutes = FlowRouter.group({
+    name: "fastrack",
+    prefix: "/fastrack"
 });
 
-FlowRouter.route("/fastrackbd", {
-    action: function() {
-        require("/imports/ui/pages/fastrack/user/products.js");
+fastrackRoutes.route("/", {
+    action: () => {
+        require("/imports/ui/pages/fastrack/user/products");
         BlazeLayout.render("applayout", {
             top: "header_store",
             main: "fastrackbd_pro",
@@ -19,23 +13,28 @@ FlowRouter.route("/fastrackbd", {
         });
     }
 });
+fastrackRoutes.route("/order/:productCode", {
+    action: () => {
+        require("/imports/ui/pages/fastrack/user/order");
+        BlazeLayout.render("applayout", {
+            top: "header_store",
+            main: "fastrackbd_order",
+            footer: "footer"
+        });
+    }
+});
 /*
  Routes for fastrack admin groups
  */
-let adminRoutes = FlowRouter.group({
-    prefix: "/admin",
-    name: "admin"
-});
 
-adminRoutes.route("/fastrack", {
+
+fastrackRoutes.route("/admin", {
     action: () => {
         require("/imports/ui/pages/fastrack/admin.js");
-        if (Meteor.isDevelopment || Meteor.userId()) {
-            BlazeLayout.render("applayout", {
-                top: "header_store",
-                main: "fastrack_admin",
-                footer: "footer"
-            });
-        }
+        BlazeLayout.render("applayout", {
+            top: "header_store",
+            main: "fastrack_admin",
+            footer: "footer"
+        });
     }
 });

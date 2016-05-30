@@ -27,15 +27,15 @@
       text-align: center
       top 80px
       right: 0
-      width: 250px;
+      width: 300px;
       padding: 0
       background: #607D8B
       border: 1px solid white
       color: white
       +below(3)
-        width: 280px
-      +below(2)
         width: 320px
+      +below(2)
+        width: 340px
       //for forgot pass and for creating new account text
       .additional-link-container
         display: block;
@@ -78,7 +78,7 @@
     .login-form,.login-password-form
       height: 100%
       div
-        margin: 10px 5px
+        margin: 5px
         label
           width: 100%
           display: block
@@ -87,7 +87,7 @@
           padding: 5px
       .message,.error-message
         font-style: italic;
-        font-size: 120%
+        font-size: 110%
         text-align: justify
         color: #03A9F4
     #login-old-password-label-and-input
@@ -96,23 +96,23 @@
         margin: 10px 0
         width: 100%
         display: block
-        
+
  //login style in slide menu mmenu when the display size is less than 400
  .login-extra
    display block
    #login-buttons
      display block
      .login-link-and-dropdown-list,.login-form-sign-in
-       display block 
+       display block
        width 100%
        height 100%
        flex-direction column
-       a.login-link-text 
+       a.login-link-text
          display block
          padding 5px
          text-align center
          border-bottom 2px dotted #2B2B2B
-         font-size 120%
+         font-size 100%
        #login-dropdown-list
          top: 0
          position relative
@@ -123,4 +123,10 @@
            color black
            font-weight bold
            cursor pointer
-         
+
+.tab-content form .user_message
+  color:#FFEB3B
+  padding: 0
+  margin: 10px
+  font-size: .9rem
+  font-style: italic

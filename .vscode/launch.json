@@ -7,12 +7,12 @@
             "request": "launch",
             "program": "${workspaceRoot}",
             "stopOnEntry": false,
-            "args": [],
-            "cwd": "${workspaceRoot}/meteor --debug",
+            "args": ["--debug-port","5000"],
+            "cwd": "meteor",
             "preLaunchTask": null,
             "runtimeExecutable": null,
             "runtimeArgs": [
-                "--nolazy"
+                "--debug-port"
             ],
             "env": {
                 "NODE_ENV": "development"
@@ -23,15 +23,10 @@
         },
         {
             "name": "Attach",
+             "preLaunchTask": "meteor",
             "type": "node",
             "request": "attach",
-            "port": 5858,
-            "address": "localhost",
-            "restart": false,
-            "sourceMaps": false,
-            "outDir": null,
-            "localRoot": "${workspaceRoot}",
-            "remoteRoot": null
+            "port": 5002
         }
     ]
 }

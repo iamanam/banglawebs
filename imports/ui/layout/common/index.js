@@ -9,4 +9,5 @@ import "./login_extend.html";
 
 //this line replaces the defult plugin template for login
 //Also this line requires a plugin called aldeed template exptension
-Template._loginButtonsLoggedInDropdown_overide.replaces("_loginButtonsLoggedInDropdown");
+//Template._loginButtonsLoggedInDropdown_overide.replaces("_loginButtonsLoggedInDropdown");
+//Template._loginButtonsFormField_extend.replaces("_loginButtonsFormField");

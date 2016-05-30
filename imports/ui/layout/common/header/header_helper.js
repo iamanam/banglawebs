@@ -1,10 +1,4 @@
 if (Meteor.isClient) {
-    Template.loginButtons.rendered=() => {
-        if(Meteor.userId()){
-            x=$("#login-buttons");
-            console.log(this,$("#login-buttons"));
-        }
-    };
     Template.header_head.rendered = function() {
         // intilizing the external plugin okayNav
         let navigation = $("#nav-main").okayNav();

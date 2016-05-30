@@ -1,0 +1,22 @@
+<template name="formLogIn">
+    <form class="logUser">
+        <button class="external-login" data-service="facebook"><i Class="fa fa-facebook"></i><span>Log in with facebook </span></button>
+        <div class="field-wrap">
+            <label>
+                Email Address<span class="req">*</span>
+            </label>
+            <input name="loginEmail" type="email" required autocomplete="off" />
+        </div>
+
+        <div class="field-wrap">
+            <label>
+                Password<span class="req">*</span>
+            </label>
+            <input name="loginPassword" type="password" required autocomplete="off" />
+        </div>
+
+        <p class="forgot tab-select"><a href="#forgotPass">Forgot Password?</a></p>
+        <button class="button button-block">Log In</button>
+    </form>
+
+</template>

@@ -1,0 +1,26 @@
+<template name="formAddUser">
+    <form class="addUser">
+        <div class="field-wrap">
+            <label>
+                User name<span class="req">*</span>
+            </label>
+            <input name="registerUser" type="text" required autocomplete="off" />
+        </div>
+
+        <div class="field-wrap">
+            <label>
+                Email Address<span class="req">*</span>
+            </label>
+            <input name="registerEmail" type="email" required autocomplete="off" />
+        </div>
+
+        <div class="field-wrap">
+            <label>
+                Set A Password<span class="req">*</span>
+            </label>
+            <input name="registerPassword" type="password" required autocomplete="off" />
+        </div>
+        <button type="submit" class="button button-block"> Get Started</button>
+    </form>
+
+</template>

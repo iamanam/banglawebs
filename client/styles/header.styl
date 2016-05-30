@@ -17,24 +17,26 @@ header
     font-family 'Advent Pro'
     justify-content space-between
     #nav-main
-      flex-basis 80%
+      flex-basis 75%
+      width: 75%
       display flex
       align-items center
       justify-content center
-    +below(3)
-       flex-basis 65%
+      +below(3)
+         flex-basis 65%
+         width 65%
+
       .okayNav__menu-toggle
         top: 0
   .slide-menu
     text-decoration: none
     padding: 10px
-  #login-buttons
-    flex-basis: 10%
-    background: #209A7E
-    display: flex
-    align-items: center
+  .login-init
+    flex-basis: 9%
     +below(3)
-      flex-basis 20%
+      flex-basis 14%
+      width: 10%
+
   .logo
     flex-basis: 10%
     display: flex;
@@ -42,10 +44,12 @@ header
     font-size 1.5rem
     align-items: center
     +below(2)
-      flex-basis 20%
+      flex-basis 15%
     img
       height: 65px
       padding: 5px
+      +below(3)
+        width: 70px
     +below(3)
       width 100%
       height auto
@@ -71,6 +75,7 @@ header
             color #5F5E54
         a
           text-decoration none
+          font-weight lighter
   //style overlapping for defult plugin okNav
   .okayNav__nav--invisible
     li
@@ -107,7 +112,7 @@ header
   min-height 350px
   //clip-path: polygon(0px 100%,85% 100%,100% 0px,0px 0px)
   .service-slide
-    flex-basis: 50%
+    flex-basis: 40%
     border-left: 5px solid #009688
     //background-color: rgba(129, 179, 166, 0.6)
     height: 350px
@@ -134,7 +139,6 @@ header
       h3.service-name
         text-align: center
         width: 100%
-        padding: 10px 0
         margin: 0
         font-size: 2rem
         box-sizing: border-box
@@ -142,6 +146,8 @@ header
         font-style: italic
         color: white
         background: #3C8776 url("/img/4.png") fixed
+        +below(2)
+          padding 10px o
 
     /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
     ul
@@ -180,7 +186,7 @@ header
             color: #3C8776
   .hero-text
     font-size 3em
-    flex-basis 50%
+    flex-basis 60%
     padding 4%
     box-sizing content-box
     +below(3)
@@ -245,10 +251,11 @@ header
       border: 5px solid $color_main
       border-bottom: 10px solid #83ECD5
       height: auto
+      z-index: 10
       &:hover
         background lighten($teal, 45%)
-        transform skew(5deg)
-        border-radius 15% 1%
+        //transform skew(5deg)
+        //border-radius 15% 1%
         transition all .5s linear .1s
       +below(2)
         padding: 5px

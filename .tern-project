@@ -1,13 +1,23 @@
 {
-"ecmaVersion": 6,
-      "libs": [
-        "browser",
-        "jquery",
-        "underscore"
-      ],
-      "loadEagerly": [ "*.js", "*/*.js", "*/*/*.js", "*/*/*/*.js" ],
-      "dontLoad": [ ".meteor","node-modules"],
-      "plugins": {
-        "meteor": "node_modules/tern-meteor/meteor.js"
-      }
-    }
+  "ecmaVersion": 6,
+  "libs": [
+    "browser",
+    "jquery",
+    "underscore"
+  ],
+  "loadEagerly": [
+    "*.js",
+    "*/*.js",
+    "*/*/*.js",
+    "*/*/*/*.js",
+    "*/*/*/*/*.js"
+
+  ],
+  "dontLoad": [
+    ".meteor/bundler-cache",
+    "node-modules"
+  ],
+  "plugins": {
+    "meteor": "node_modules/tern-meteor/meteor.js"
+  }
+}

@@ -12,3 +12,13 @@
         {{/if}}
     </div>
 </template>
+<template name="_loginButtonsFormField_extend">
+  {{#if visible}}
+    <div id="login-{{fieldName}}-label-and-input">
+      <label id="login-{{fieldName}}-label" for="login-{{fieldName}}">
+        {{fieldLabel}}
+      </label>
+      <input id="login-{{fieldName}}" type="{{inputType}}" />
+    </div>
+  {{/if}}
+</template>

@@ -1,0 +1,76 @@
+.login-init
+  display block
+  height 100%
+  width 100%
+  position: relative
+  .start
+    display flex
+    flex-basis 100%
+    height 100%
+    align-items center
+    background #48CFAD
+    //style for login initiate button which will show off login content
+    .login-start
+      display:block
+      width 100%
+      text-align center
+      font-weight: bolder
+      color: white
+      //style for logged in user, it will replace the log-in text and include one icon
+    .user-log
+      text-decoration: none
+      display: flex
+      width: 100%
+      height: 100%
+      justify-content: center;
+      i
+        align-self: center
+        display: block;
+        color #209A7E
+
+.login-content
+  display:block
+  position:absolute
+  width:300px
+  right:0
+  z-index: 1000
+  .userDash
+    display: block;
+    p
+      color: #FFC107
+      text-align: center
+      margin: 5px 0
+      display: block
+      border-bottom: 2px solid
+    .user-options
+      color: white
+      margin: 5px
+      list-style: none
+      padding: 0
+      li
+        display: block
+        padding: 5px
+        a
+          text-decoration: none
+          color: white
+          transition: all 0.3s .1s ease
+        &:hover
+          a
+            text-decoration: underline;
+            margin-left: 10%
+
+.logUser .external-login
+  display: block
+  width: auto
+  height: auto
+  padding: 5px
+  margin: 15px auto
+  font-size: 16px
+  font-weight: bold
+  border: none
+  outline: none
+
+  i
+    color:blue
+    margin-right: 10px
+    font-size: 150%

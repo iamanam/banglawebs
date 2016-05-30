@@ -5,13 +5,14 @@
             <a id="js-berger-menu" href="#menu" class="berger-menu"><span
                     class="berger-menu__icon"></span></a>
         </span>
-         {{#unless size}} {{> okayNav}} {{/unless}}
+        {{#unless size}} {{> okayNav}} {{/unless}}
 
-<div class="logo">
-    <img src="/img/logo_small.png" />
-</div>
-{{#unless size}} {{> loginButtons}} {{/unless}}
-</section>
+        <div class="logo">
+            <img src="/img/logo_small.png" />
+        </div>
+        {{>login_init}}
+
+    </section>
 </template>
 <template name="header_store">
     <header>
@@ -23,16 +24,16 @@
             <nav role="navigation" id="nav-main" class="okayNav">
                 <ul>
                     <li>
-                        <a href="{{pathFor '/products/fastrackbd'}}">Home</a>
+                        <a href="{{pathFor '/fastrack'}}">Home</a>
                     </li>
                     <li>
-                        <a href="{{pathFor '/products/fastrackbd'}}">Products</a>
+                        <a href="{{pathFor '/fastrack'}}">Products</a>
                     </li>
                     <li>
-                        <a href="{{pathFor '/admin/fastrack'}}">Admin</a>
+                        <a href="{{pathFor '/fastrack/admin'}}">Admin</a>
                     </li>
                     <li>
-                        <a href="{{pathFor '/products/fastrackbd/order'}}">order</a>
+                        <a href="{{pathFor '/fastrack/order'}}">order</a>
                     </li>
                     <li>
                         <a href="{{pathFor '/contact'}}">Contact</a>
@@ -41,7 +42,7 @@
             </nav>
 
             <div class="logo">
-                <h3>Fastrackbd</h3>
+                <img src="/img/fastrack_icon.png" title="fastrackbd" alt="fastrackbd logo" />
             </div>
 
         </section>
