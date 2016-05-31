@@ -14,7 +14,7 @@ orderSchema = new SimpleSchema({
     productOrdered:{
         type:"String",
         autoValue:()=>{
-            return FlowRouter.getParam("id");
+            return FlowRouter.getParam("productCode");
         }
     },
     OrderType: {

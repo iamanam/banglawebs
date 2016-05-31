@@ -2,18 +2,17 @@ import"./order.html";
 
 
 Template.fastrackbd_order.onCreated(() => {
-    const productId = FlowRouter.getParam("id");
+    const productId = FlowRouter.getParam("productCode");
     Meteor.subscribe("findOne", productId);
 
 });
 
 Template.fastrackbd_order.helpers({
     thisProduct: ()=> {
-        const productId = FlowRouter.getParam("id");
+        const productId = FlowRouter.getParam("productCode");
         check(productId, String);
         const singleProduct = Products.findOne({_id: productId});
         return singleProduct;
-
     }
 });
 AutoForm.hooks({
