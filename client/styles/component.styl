@@ -7,6 +7,20 @@ main
   padding 2%
   text-align center
 
+//mmenu style which overwrite defual plugin value
+.mm-menu
+  background: #209a7e
+  font-size: 1.5rem
+  color: white
+  .mm-list,.mm-panel,.mm-opened,.mm-current
+    .mm-selected
+      display: block
+      &:after
+        border-bottom: none
+
+
+
+//this style will open mmenu
 .berger-menu
   display block
   position relative
@@ -85,4 +99,3 @@ main
 
 .berger-menu.open .berger-menu__icon, .berger-menu.open .berger-menu__icon:before, .berger-menu.open .berger-menu__icon:after
   background-color #fff
-

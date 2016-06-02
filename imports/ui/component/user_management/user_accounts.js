@@ -4,38 +4,11 @@ import "./other.html";
 import "./user_accounts.html";
 
 
+//login logic
+
+import "./login";
 
 if (Meteor.isClient) {
-    const visibleContentClass="activeTab";
-    //this function will set the tab to the default tab
-    const setIntialTab=(Template)=>{
-        const userTemplate=Meteor.userId()===null?"#login":"#dashboard";
-        if(Template){
-            return Template.$(userTemplate).addClass(visibleContentClass);
-        }
-        this.$(userTemplate).addClass(visibleContentClass);
-    };
-    Template.login_init.onRendered(setIntialTab);
-
-    //this event will open or close the login div
-    Template.login_init.events({
-        "click .init_user": function(event, template){
-            event.preventDefault();
-            let loginContent=template.$(".login-content");
-            loginContent.toggleClass("hide");
-            if(loginContent.find("."+visibleContentClass).length==0){
-                setIntialTab(template);
-            }
-        },
-        "click .tab-select a":(event,template)=>{
-            event.preventDefault();
-            let target=event.currentTarget.hash;
-            let tabContent=template.$(".tab-content");
-            tabContent.children("."+visibleContentClass).removeClass(visibleContentClass);
-            tabContent.find(target).addClass(visibleContentClass);
-        }
-    });
-
   //This event will be used to show off the hidden menu content
     Template.formAddUser.events({
         "submit form": function(event) {
@@ -52,7 +25,7 @@ if (Meteor.isClient) {
     });
 
     Template.formLogIn.events({
-        "submit form": function(event){
+        "submit form.logUser": function(event){
             event.preventDefault();
             const emailVar = event.target.loginEmail.value;
             const passwordVar = event.target.loginPassword.value;
@@ -63,16 +36,7 @@ if (Meteor.isClient) {
                 $(".tab-content").children("."+visibleContentClass).removeClass(visibleContentClass)
                 .addBack().find("#dashboard").addClass(visibleContentClass);
             });
-        },
-        "click .external-login":(event)=>{
-            event.preventDefault();
-            const service=$(event.currentTarget).attr("data-service");
-            if(service==="facebook"){
-                Meteor.loginWithFacebook();
-            }
-            console.log(event,service);
         }
-
     });
 
     Template.forgotPass.events({

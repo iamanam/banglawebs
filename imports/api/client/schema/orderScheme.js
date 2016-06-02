@@ -9,7 +9,8 @@ orderSchema = new SimpleSchema({
     mobile: {
         type: Number,
         label: "Put your mobile number",
-        min: 11
+        min: 11,
+        regEx:/^(?:\+88|01)?(?:\d{11}|\d{13})$/
     },
     productOrdered:{
         type:"String",

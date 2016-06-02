@@ -4,15 +4,20 @@ if (Meteor.isClient) {
         let navigation = $("#nav-main").okayNav();
 
     };
+
     Template.header_store.rendered = function() {
         // intilizing the external plugin okayNav
         let navigation = $("#nav-main").okayNav();
     };
 
+
     Template.header_head.events({
         "click #js-berger-menu": function(e) {
+
+
             e.preventDefault();
             $(e.currentTarget).toggleClass("open");
         }
     });
+
 }

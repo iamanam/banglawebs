@@ -2,26 +2,25 @@ import"./order.html";
 
 
 Template.fastrackbd_order.onCreated(() => {
-    const productId = FlowRouter.getParam("productCode");
-    Meteor.subscribe("findOne", productId);
-
+    this.productId = () => FlowRouter.getParam("productCode");
 });
+Template.name.onCreated = function(){
 
-Template.fastrackbd_order.helpers({
-    thisProduct: ()=> {
-        const productId = FlowRouter.getParam("productCode");
-        check(productId, String);
-        const singleProduct = Products.findOne({_id: productId});
-        return singleProduct;
-    }
-});
+};
+
+
 AutoForm.hooks({
     "insertOrder": {
         onSubmit: function (insertDoc) {
             this.event.preventDefault();
             const self = this;
+            insertDoc.productOrdered=FlowRouter.getParam("productCode");
             const orderEmail="New order recived from ";
-
+            check(insertDoc,orderSchema);
+            const ngpattern=/^(?:\+88|01)?(?:\d{11}|\d{13})$/;
+            isValidNumber=ngPattern.test(insertDoc.mobile);
+            if(!isValidNumber)
+                return Meteor.Error(401,"Number isn't valid");
             Meteor.call("saveOrder", insertDoc, function (error, result) {
                 if (error)
                     return error;

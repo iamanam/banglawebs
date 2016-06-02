@@ -14,16 +14,17 @@ header
     display flex
     width 100%
     height 80px
+    padding: 10px 5px
+    margin-bottom: 10px
     font-family 'Advent Pro'
     justify-content space-between
     #nav-main
-      flex-basis 75%
-      width: 75%
+      flex 6.5
       display flex
       align-items center
       justify-content center
       +below(3)
-         flex-basis 65%
+         flex-basis 5.5
          width 65%
 
       .okayNav__menu-toggle
@@ -31,23 +32,20 @@ header
   .slide-menu
     text-decoration: none
     padding: 10px
+    flex 1
   .login-init
-    flex-basis: 9%
-    +below(3)
-      flex-basis 14%
-      width: 10%
-
+    flex: 1
   .logo
-    flex-basis: 10%
+    flex: 1.5
     display: flex;
+    justify-content: center
     height: initial
     font-size 1.5rem
     align-items: center
     +below(2)
-      flex-basis 15%
+      flex 2
     img
-      height: 65px
-      padding: 5px
+      height: 70px
       +below(3)
         width: 70px
     +below(3)
@@ -176,13 +174,16 @@ header
           display: flex
           font-size: 1.2rem
           +below(2)
+            margin-left: 10%
             font-size: 1.5rem
           a
             color: white
             text-decoration: none
-            width: 90%
+            width: 85%
           i
-            width: 10%
+            width: 15%
+            margin-right: 8%
+            font-size: 150%
             color: #3C8776
   .hero-text
     font-size 3em
@@ -279,6 +280,9 @@ header
         margin: 0 auto
 
         i
+          font-size: 2rem
           display: table-cell
           color: black
           vertical-align: middle
+          +below(2)
+            font-size: 1.5rem

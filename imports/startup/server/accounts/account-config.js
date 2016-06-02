@@ -9,7 +9,9 @@ if(Meteor.isServer){
       //oauthSecretKey: "wgporjigrpqgdfg"
     });
     Accounts.ui.config({
-        requestPermissions: {},
+        requestPermissions: {
+            facebook: ["email"]
+        },
         requestOfflineToken: {},
         passwordSignupFields: "USERNAME_AND_EMAIL"
     });
@@ -38,16 +40,4 @@ Outh service configurations
         return true;
     });
 
-}
-
-if(Meteor.isServer){
-    ServiceConfiguration.configurations.remove({
-        service: "facebook"
-    });
-
-    ServiceConfiguration.configurations.insert({
-        service: Meteor.settings.facebook.service,
-        appId: Meteor.settings.facebook.appId,
-        secret: Meteor.settings.facebook.api
-    });
 }

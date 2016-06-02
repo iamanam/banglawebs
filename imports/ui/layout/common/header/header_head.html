@@ -1,19 +1,32 @@
+<template name="slideMenu">
+    <span class="slide-menu">
+      <a id="js-berger-menu" href="#menu" class="berger-menu"><span
+              class="berger-menu__icon"></span></a>
+    </span>
+</template>
+
+<template name="logo">
+    <div class="logo">
+        <img src={{logoUrl}} />
+    </div>
+</template>
+
+
 <template name="header_head">
     <section class="header-head header" id="header">
-
-        <span class="slide-menu">
-            <a id="js-berger-menu" href="#menu" class="berger-menu"><span
-                    class="berger-menu__icon"></span></a>
-        </span>
+        <!--add slide-menu Template at the very begining-->
+        {{>slideMenu}}
+        <!--if size is more than scale 2 the show the nav-->
         {{#unless size}} {{> okayNav}} {{/unless}}
-
-        <div class="logo">
-            <img src="/img/logo_small.png" />
-        </div>
+        <!--template for logo-->
+        {{>logo logoUrl="/img/logo_small.png"}}
+        <!--Template for login button-->
         {{>login_init}}
-
     </section>
 </template>
+
+<!---This is copy paste of header_head except with few changes made for fastrack shpp-->
+
 <template name="header_store">
     <header>
         <section class="header-head header" id="header">
@@ -21,6 +34,7 @@
             <a id="js-berger-menu" href="#menu" class="berger-menu"><span
                     class="berger-menu__icon"></span></a>
             </span>
+            {{#unless size}}
             <nav role="navigation" id="nav-main" class="okayNav">
                 <ul>
                     <li>
@@ -40,11 +54,11 @@
                     </li>
                 </ul>
             </nav>
-
+            {{/unless}}
             <div class="logo">
                 <img src="/img/fastrack_icon.png" title="fastrackbd" alt="fastrackbd logo" />
             </div>
-
+            {{>login_init}}
         </section>
     </header>
 </template>

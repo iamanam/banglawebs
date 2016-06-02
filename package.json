@@ -7,7 +7,7 @@
     "start": "meteor --port 3004"
   },
   "dependencies": {
-    "meteor-node-stubs": "^0.2.3"
+    "meteor-node-stubs": "^0.2.3",
   },
   "devDependencies": {
     "tern-meteor": "^1.0.6"
