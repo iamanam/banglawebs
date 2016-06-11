@@ -2,6 +2,7 @@
  * Created by iaman on 5/9/2016.
  */
 "use strict";
+import  whois  from "whois";
 import "./hosting.html";
 var pack = [
     {
@@ -36,3 +37,7 @@ Template.hosting.helpers({
         return pack;
     }
 });
+
+Template.domain_search.rendered=function(){
+    console.log(whois.lookup("google.com"));
+};

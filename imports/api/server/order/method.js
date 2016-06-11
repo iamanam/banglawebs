@@ -1,13 +1,11 @@
-
 Meteor.methods({
-    saveOrder: function (doc) {
-        console.log(doc,process.env);
-        doc.email="mybanglawebs@gmail.com";
-        doc.name="Order";
-        const format=doc.OrderType +" recived from "+ doc.mobile + " For a product "+ doc.productOrdered+ "//n Bkash number is " +doc.bkash;
+    saveOrder: function(doc) {
+        doc.email = "mybanglawebs@gmail.com";
+        doc.name = "Order";
+        const format = doc.OrderType + " recived from " + doc.mobile + " For a product " + doc.productOrdered + "//n Bkash number is " + doc.bkash;
         //Meteor.call("sendEmail",format);
         this.unblock();
-    // Send the e-mail
+        // Send the e-mail
         Order.insert(doc);
         this.unblock();
 

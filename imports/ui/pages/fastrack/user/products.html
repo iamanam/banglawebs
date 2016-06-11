@@ -1,11 +1,11 @@
 <template name="fastrackbd_pro">
     <div class="product-gallery-pro">
-        <h1>Watches</h1>
+        <h1>Collection Watches</h1>
         <nav class="product-filter">
             <div class="sort">
                 <div class="collection-sort">
                     <label>Filter by:</label>
-                    <select>
+                    <select class="c-select">
                         <option value="/">All watches</option>
                         <option value="/">2016</option>
                         <option value="/">Fastrack</option>
@@ -34,11 +34,11 @@
             {{#each productsAll}}
             <div class="product-card">
                 <div class="product-image">
-                    <img src="{{imageUrl}}" title={{title}}>
+                    <a href="{{productUrl}}"> <img src="{{imageUrl}}" title={{title}}></a>
                 </div>
                 <div class="product-info">
                     <h5>
-                            <a href="#">{{title}}</a>
+                            <a href="{{productUrl}}" title="{{title}}">{{title}}</a>
                         </h5>
                     <h6>{{priceTaka}}
                             Tk</h6>

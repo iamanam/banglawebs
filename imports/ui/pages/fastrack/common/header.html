@@ -1,0 +1,86 @@
+<!---This is copy paste of header_head except with few changes made for fastrack shpp-->
+
+<template name="header_store">
+    <header>
+        <section class="header-head header" id="header">
+            <span class="slide-menu">
+            <a id="js-berger-menu" href="#menu" class="berger-menu"><span
+                    class="berger-menu__icon"></span></a>
+            </span>
+            {{#unless size}}
+            <nav role="navigation" id="nav-main" class="okayNav">
+                <ul>
+                    <li>
+                        <a href="{{pathFor '/fastrack'}}">Home</a>
+                    </li>
+                    <li>
+                        <a href="{{pathFor '/fastrack'}}">Products</a>
+                    </li>
+                    <li>
+                        <a href="{{pathFor '/fastrack/order'}}">order</a>
+                    </li>
+                    <li>
+                        <a href="{{pathFor '/fastrack/how_it_work'}}">How it works</a>
+                    </li>
+                    <li>
+                        <a href="{{pathFor '/contact'}}">Contact</a>
+                    </li>
+                </ul>
+            </nav>
+            {{/unless}}
+            <div class="logo">
+                <img src="/img/fastrack_icon.png" title="fastrackbd" alt="fastrackbd logo" />
+            </div>
+            {{>initUserManagement}}
+        </section>
+        <section class="header-main">
+            <div class="hero-text">
+                <h1 class="main-hero">Welcome here</h1>
+                <h3 class="info-hero">Worldclass shop for branded products!!</h3>
+            </div>
+            <div class="service-slide">
+                <div class="service-slide-title">
+                    <span class="fa slide-dir">
+                        <i class="fa-chevron-left"></i>
+                    </span>
+                    <h3 class="service-name"> All products</h3>
+                    <span class="fa slide-dir">
+                        <i class="fa-chevron-right"></i>
+                    </span>
+                </div>
+                <ul>
+                    <li>
+                        <div>
+                            <i class="fa fa-cloud"></i>
+                            <a href="{{pathFor '/hosting'}}">Featured</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <i class="fa fa-image"></i>
+                            <a href="{{pathFor '/design'}}">Watch</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <i class="fa fa-code"></i>
+                            <a href="{{pathFor '/ecommerce'}}">Beauty & health</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <i class="fa fa-google"></i>
+                            <a href="{{pathFor 'seo'}}">Fashion products</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <i class="fa fa-question"></i>
+                            <a href="{{pathFor 'tutorial'}}">Tech products</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </header>
+</template>

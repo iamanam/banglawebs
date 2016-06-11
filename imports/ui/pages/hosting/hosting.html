@@ -1,3 +1,17 @@
+<template name="domain_search">
+    <div class="feature-block domain-search">
+        <form class="domain">
+            <section class="domain-search form-group">
+                <label class="form-label" for="domain">Search for domain </label>
+                <input class="form-control" type="text" name="domain" />
+            </section>
+            <section class="form-group">
+                <button type="submit" class="domain-submit">Search</button>
+            </section>
+        </form>
+    </div>
+</template>
+
 <template name="hosting">
     <div id="main-page-content">
         <div class="feature-block">
@@ -10,8 +24,9 @@
                             class="fa fa-quote-right"></i>
                 </h3>
             </section>
-
         </div>
+        {{>domain_search}}
+
         <div class="feature-block">
             <section class="service-img-description">
                 <div class="work-flow-content">
@@ -52,9 +67,7 @@
                 <h2><strong>Site </strong> <span> features included but not limited to</span></h2>
 
                 <div class="view-pricing">
-                    {{#each packageTotal}}
-                        {{>blockPrice title=title price=price icon=icon features=featurePack }}
-                    {{/each}}
+                    {{#each packageTotal}} {{>blockPrice title=title price=price icon=icon features=featurePack }} {{/each}}
                 </div>
             </div>
 
@@ -137,7 +150,7 @@
             </span>
             <ul>
                 {{#each feature in features}}
-                    <li class="feature">{{feature}}</li>
+                <li class="feature">{{feature}}</li>
                 {{/each}}
             </ul>
         </section>

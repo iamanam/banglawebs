@@ -36,3 +36,7 @@ check
 aldeed:template-extension
 mdg:validated-method
 #oauth-encryption
+#velocity:core
+practicalmeteor:mocha
+dispatch:mocha-phantomjs
+deanius:promise

@@ -5,10 +5,6 @@ if (Meteor.isClient) {
 
     };
 
-    Template.header_store.rendered = function() {
-        // intilizing the external plugin okayNav
-        let navigation = $("#nav-main").okayNav();
-    };
 
 
     Template.header_head.events({

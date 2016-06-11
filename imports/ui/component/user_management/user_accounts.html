@@ -1,47 +1,60 @@
 <template name="user_management">
-    <div id="user-form">
-        <div class="form">
-            {{#unless currentUser}}
-            <ul class="tab-group">
-                <li class="tab active tab-select"><a href="#signup">Sign Up</a></li>
-                <li class="tab tab-select"><a href="#login">Log In</a></li>
-            </ul>
-            {{/unless}}
-            <div class="tab-content">
-                <div id="dashboard" class="userDash">
-                    {{>dashboard}}
-                </div>
-                <div id="signup">
-                    <h1>Sign Up for Free</h1> {{>formAddUser}}
-                </div>
-                <div id="login">
-                    <h1>Welcome Back!</h1> {{> formLogIn}}
-                </div>
-                <div id="forgotPass">
-                    <div class="tab-content">
-                        {{>forgotPass}}
-                    </div>
-                </div>
-                <div id="resetPass">
-                    <div class="tab-content">
-                        {{>resetPass}}
-                    </div>
-                </div>
+    <div class="user-form">
+
+        {{#unless currentUser}}
+        <ul class="tab-group">
+            <li class="tab tab-select"><a href="#signup">Sign Up</a></li>
+            <li class="tab tab-select active"><a href="#login">Log In</a></li>
+        </ul>
+        {{else}}
+        <ul class="tab-group">
+            <li class="tab active tab-select"><a href="#dashboard">Dashboard</a></li>
+            <li class="tab tab-select logout"><a href="#login">Log out</a></li>
+        </ul>
+        {{/unless}}
+        <div class="tab-content">
+            <div id="dashboard" class="userDash">
+                {{>dashboard}}
             </div>
-            <!-- tab-content -->
+            <div id="signup">
+                <h1>Sign Up for Free</h1> {{>formAddUser}}
+            </div>
+            <div id="login">
+                <h1>Welcome Back!</h1> {{> formLogIn}}
+            </div>
+            <div id="forgotPass">
+                {{>forgotPass}}
+            </div>
+            <div id="resetPass">
+                {{>resetPass}}
+            </div>
+        </div>
+        <!-- tab-content -->
+    </div>
+</template>
+
+<template name="initUserManagement">
+    <div class="init-userManagement">
+        <div class="start">
+            {{#if openForm}}
+            <div class="init_user closePopup">
+                <span class="fa"><a class="fa-close"></a></span>
+            </div>
+            {{else}} {{#if currentUser}}
+            <a class="user-log init_user" href="#dashboard"><i Class="fa fa-2x fa-user"></i></a> {{else}}
+            <a class="login-start init_user" href="#login">Log-in</a> {{/if}} {{/if}}
+        </div>
+        <div class="login-content hide">
+            {{> user_management}}
+            <div class="error-field">
+                {{>form_error}}
+            </div>
         </div>
     </div>
 </template>
 
-<template name="login_init">
-    <div class="login-init">
-        <div class="start">
-            {{#if currentUser}}
-            <a class="user-log init_user" href="#dashboard"><i Class="fa fa-2x fa-user"></i></a> {{else}}
-            <a class="login-start init_user" href="#login">Log-in</a> {{/if}}
-        </div>
-        <div class="login-content hide">
-            {{> user_management}}
-        </div>
-    </div>
+<template name="form_error">
+    <label>
+        <span> > {{error_message}}</span>
+    </label>
 </template>

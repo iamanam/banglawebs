@@ -1,19 +1,81 @@
 <template name="fastrackbd_order">
+    {{#if currentUser}}
     <div class="fastrack_store">
-        {{#autoForm collection="Order" id="insertOrder" type="normal"}}
-        <fieldset>
-            <legend>Fill up to put your order</legend>
-            {{> afQuickField name='mobile'}} {{> afQuickField name='OrderType' options='allowed'}} {{> afQuickField name='bkash'}} {{> afQuickField name="choose" options="allowed"}}
-        </fieldset>
-        <button type="submit" class="btn btn-primary">Order</button>
-        {{/autoForm}}
-        <div class="view-pro-less">
-            {{#with thisProduct}}
+        <section class="order-form">
+            {{#autoForm collection="Order" id="insertOrder" type="normal" validation="blur"}}
+            <fieldset>
+                <legend>Fill up to put your order</legend>
+                {{> afQuickField name='mobile' validation="blur"}} {{> afQuickField name='OrderType' options='allowed'}} {{> afQuickField name='bkash'}} {{> afQuickField name="choose" options="allowed"}}
+            </fieldset>
+            <button type="submit" class="btn btn-primary">Order</button>
+            {{/autoForm}}
+            <div class="order-status">
+                <h5></h5>
+            </div>
+        </section>
+        <div class="view-product-demo">
+            {{#if Template.subscriptionsReady}} {{#with thisProduct}}
             <p>{{title}}</p>
             <img src="{{imageUrl}}" title="{{title}}">
             <p>Price {{priceTaka}}tk
             </p>
-            {{/with}}
+            {{/with}} {{/if}}
         </div>
+    </div>
+    {{else}}
+    <div class="fastrack_store">
+        <h1>Log in</h1>
+        <form class="external-service">
+            <button data-social-login="loginWithFacebook" type="submit" class="external-login">
+                <i Class="fa fa-facebook"></i><span>Log in with facebook </span>
+            </button>
+        </form>
+        <section class="offer">
+            <h4>Why you need to log in?</h4>
+            <ul>
+                <li>
+                    <p>
+                        For manageing your orders
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        Get latest update
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        To track your order
+                    </p>
+                </li>
+                <li>
+                    <p>
+                        To enjoy the offer
+                    </p>
+                </li>
+            </ul>
+        </section>
+    </div>
+    {{/if}}
+</template>
+<template name="order_view">
+    <div class="fastrack_store">
+        {{#if currentUser}}
+        <section class="order_list">
+            <div class="view-product-demo">
+                {{#if Template.subscriptionsReady}} {{#with productByid}}
+                <p>{{title}}</p>
+                <img src="{{imageUrl}}" title="{{title}}">
+                <p>Price {{priceTaka}}tk
+                </p>
+                {{/with}} {{/if}}
+            </div>
+            {{#with orderedProductByUser}}
+            <h4>{{title}}</h4> {{/with}}
+        </section>
+        {{else}}
+        <h4>You have no order so far. See our proudcts for new order </h4>
+        <h5><a href="{{pathFor '/fastrack'}}">Check out our products</a></h5> {{/if}}
+
     </div>
 </template>

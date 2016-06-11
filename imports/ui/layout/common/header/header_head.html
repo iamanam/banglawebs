@@ -21,44 +21,6 @@
         <!--template for logo-->
         {{>logo logoUrl="/img/logo_small.png"}}
         <!--Template for login button-->
-        {{>login_init}}
+        {{>initUserManagement}}
     </section>
-</template>
-
-<!---This is copy paste of header_head except with few changes made for fastrack shpp-->
-
-<template name="header_store">
-    <header>
-        <section class="header-head header" id="header">
-            <span class="slide-menu">
-            <a id="js-berger-menu" href="#menu" class="berger-menu"><span
-                    class="berger-menu__icon"></span></a>
-            </span>
-            {{#unless size}}
-            <nav role="navigation" id="nav-main" class="okayNav">
-                <ul>
-                    <li>
-                        <a href="{{pathFor '/fastrack'}}">Home</a>
-                    </li>
-                    <li>
-                        <a href="{{pathFor '/fastrack'}}">Products</a>
-                    </li>
-                    <li>
-                        <a href="{{pathFor '/fastrack/admin'}}">Admin</a>
-                    </li>
-                    <li>
-                        <a href="{{pathFor '/fastrack/order'}}">order</a>
-                    </li>
-                    <li>
-                        <a href="{{pathFor '/contact'}}">Contact</a>
-                    </li>
-                </ul>
-            </nav>
-            {{/unless}}
-            <div class="logo">
-                <img src="/img/fastrack_icon.png" title="fastrackbd" alt="fastrackbd logo" />
-            </div>
-            {{>login_init}}
-        </section>
-    </header>
 </template>

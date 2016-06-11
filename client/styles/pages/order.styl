@@ -1,7 +1,7 @@
-.space-one {
-  display block
-  margin-bottom 10px
-}
+.space-one
+  display: block
+  margin-bottom: 10px
+
 
 .fastrack_store
   padding 2%
@@ -11,19 +11,32 @@
   color black
   font-family "Century Gothic", "Trebuchet MS"
   height 100%
+  display: flex
   clearfix()
-  form
-    width 64%
-    display block
-    float left
-    +below(2)
-      width: 100%
-  .view-pro-less
-    display block
-    float: left
-    width 35%
+  +below(2)
+    flex-direction: column-reverse
+  .order-form // section which holding the form and success message showing div
+    display: block;
+    position: relative
+    #insertOrder // form
+      flex: 2
+      display block
+      +below(2)
+        width: 100%
+      fieldset
+        margin: 20px 0
+        border: none
+    .form-success //styles to success message if order is successful
+        color: #607D8B
+        padding: 10px
+        background: aliceblue
+  .view-product-demo
+    display flex
+    flex: 1
     padding 10px
     margin 0
+    flex-direction: column
+    justify-content: center
     img
       width auto
       height 150px
@@ -35,5 +48,29 @@
   +below(2)
     form , .view-pro-less
       width: 100%
-.form-success
-    color: green
+
+
+// style end for sub content where people can put order
+
+// styles for order page when they are not logged in
+  h1
+    margin: 10px
+    border-bottom: 4px solid #48cfad
+    width: 50%
+    margin: 0 auto;
+    color: #009688
+  .external-service
+    width: 100%
+    margin: 10px 0
+    justify-content: center
+    
+.offer
+  h4
+    font-size: 20px
+    color: cadetblue
+  ul
+    padding: 0 20px
+    list-style-type: lower-roman
+    font-style: italic
+    li
+      font-size: 15px
