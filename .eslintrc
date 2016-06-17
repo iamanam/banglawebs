@@ -32,9 +32,10 @@
     // http://eslint.org/docs/rules/strict
     "strict": [2, "never"],
 
-/**
- * ES6
- */
+
+    /**
+     * ES6
+     */
     "no-var": 0,                     // http://eslint.org/docs/rules/no-var
 
 /**
@@ -169,6 +170,7 @@
     "space-infix-ops": 2,            // http://eslint.org/docs/rules/space-infix-ops
     "space-return-throw-case": 2,    // http://eslint.org/docs/rules/space-return-throw-case
     "spaced-comment": 2,             // http://eslint.org/docs/rules/spaced-comment
-    "no-multi-spaces": 2             // http://eslint.org/docs/rules/no-multi-spaces
+    "no-multi-spaces": 2,             // http://eslint.org/docs/rules/no-multi-spaces
+    "validateLineBreaks": "LF"
   }
 }

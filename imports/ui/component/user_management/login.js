@@ -1,8 +1,10 @@
 import "./login.html";
 
 const visibleContentClass = "activeTab";
+let attempt = Session.get("attempt") || 0;
 //This will contain all logic of login
 var loginManagement = [];
+
 loginManagement.events = (helper) => {
     if (helper && typeof helper === "object")
         return {
@@ -14,10 +16,20 @@ loginManagement.events = (helper) => {
                     username: emailVar
                 }, passwordVar, (error) => {
                     //this will show the error recived from server
-                    helper.FormErrorCatcher(error);
-                    //if operation is passed then show the dashboard
+                    if (error) {
+                        return helper.FormErrorCatcher(error);
+                    }
+                });
+
+
+                Accounts.onLogin(() => {
                     $(template.firstNode).parent().removeClass("activeTab");
                     return $("#dashboard").addClass("activeTab");
+                    helper.errorDiv.hide();
+
+                });
+                Accounts.onLoginFailure(() => {
+
                 });
             },
             //This is logic for external service login
@@ -35,6 +47,7 @@ loginManagement.events = (helper) => {
                         Session.set("errorMessage", err.reason || "Unknown error");
                 });
             }
+
         }
 }
 

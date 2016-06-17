@@ -28,6 +28,7 @@ function UserManagement() {
             if (!self.userContent.hasClass("hide")) {
                 return Session.set("openForm", true)
             }
+            self.errorDiv.hide();
             Session.set("openForm", false);
         }
     });
@@ -36,11 +37,11 @@ function UserManagement() {
             return Session.get("openForm");
         }
     })
-    self.FormErrorCatcher = (error) => {
-        if (error) {
-            return self.errorDiv.find("span").text(0).text(error.message).addBack().show();
+    self.FormErrorCatcher = (error, errorText) => {
+        if (error || errorText) {
+            return self.errorDiv.find("span").text(0).text(error.message || errorText).addClass("double-flash")
+                .addBack().show();
         }
-        self.errorDiv.find("span").hide();
     }
 };
 
@@ -71,6 +72,7 @@ ManageUserForm.template.events({
     "click .logout": function(event) {
         event.preventDefault();
         Meteor.logout();
+        ManageUserForm.errorDiv.hide();
     },
     "click .tab-select a": function(event, template) {
         event.preventDefault();
@@ -79,6 +81,7 @@ ManageUserForm.template.events({
         let container = template.$(".tab-content");
         container.children(".activeTab").removeClass("activeTab");
         container.children(action).addClass("activeTab");
+        ManageUserForm.errorDiv.hide();
     }
 });
 

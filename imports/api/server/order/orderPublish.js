@@ -3,10 +3,12 @@
  */
 
 Meteor.publish("orderedProduct", (productId) => {
-    console.log(Order.findOne({
+    return Order.findOne({
         _id: productId
-    }))
-    return Order.findOne(productId);
+    })
+})
+Meteor.publish("publishAllOrder", () => {
+    return Order.find({})
 })
 Meteor.publish("publishProductById", (user) => {
     return Order.find({

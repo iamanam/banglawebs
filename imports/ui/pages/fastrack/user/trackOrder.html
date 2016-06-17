@@ -1,0 +1,28 @@
+<template name="track_order">
+    <div class="fastrack_store track_order">
+        <h2 class="title">Find order status with your order id:</h2>
+        <form>
+            <fieldset class="form-group">
+                <label for="exampleInputEmail1">Put your order id</label>
+                <input type="text" class="form-control" id="getOrderId" placeholder="Enter order id">
+            </fieldset>
+            <input type="submit" value="submit" class="btn btn-info" />
+        </form>
+        <section class="order-list">
+
+        </section>
+        <section class="other-options-stack">
+            <div>
+                <a href="{{pathFor '/fastrack/view_order'}}"><span><i class="fa fa-cart-plus"></i></span><span>All orders</span></a>
+            </div>
+            <div>
+
+                <a href="{{pathFor '/fastrack'}}"><span><i class="fa fa-dashboard"></i></span><span>All products</span></a>
+            </div>
+            <div>
+                <a href="{{pathFor '/contact'}}"> <span><i class="fa fa-envelope-o"></i></span><span>Contact us</span></a>
+            </div>
+        </section>
+
+    </div>
+</template>

@@ -1,0 +1,56 @@
+<template name="show_order">
+    <div class="fastrack_store">
+        {{#if currentUser}}
+        <section class="order-list">
+            <h2>List of the item you ordered.</h2> {{#each product in orderedProductByUser}} {{>order_info pro=product
+            details=product.proDetails}} {{/each}}
+        </section>
+        {{else}}
+        <h4>You have no order so far. See our proudcts for new order </h4>
+        <h5><a href="{{pathFor '/fastrack'}}">Check out our products</a></h5> {{/if}}
+    </div>
+</template>
+<template name="order_info">
+    <section class="my-orders">
+        <section class="order-item">
+            <div class="text-details">
+                <div class="top-row">
+                    <div>
+                        <span>id#</span>
+                        <p> {{pro.orderId}}</p>
+                    </div>
+                    <div>
+                        <span>ordered#</span>
+                        <p>20/1/16</p>
+                    </div>
+                    <div><span>#price </span>
+                        <p>{{details.price}}</p>
+                    </div>
+                </div>
+                <div class="main-row">
+                    <div><span>#Pro </span>
+                        <p><a href="{{details.productUrl}}">{{details.title}}</a></p>
+                    </div>
+                    <div><span>#brand </span>
+                        <p>{{details.brand}}/{{details.Model}}</p>
+                    </div>
+                    <div>
+                        <span>#Delivery </span>
+                        <p>1/2/16</p>
+                    </div>
+                    <div>
+                        <button>
+                            <a href="track_order/{{pro.orderId}}">Track</a></button>
+                    </div>
+                </div>
+            </div>
+            <div class="image-details ">
+                <div class="product-image ">
+                    <a href="{{details.imageUrl}} "><img src="{{details.imageUrl}}
+                                " title="{{details.title}} "></a>
+                </div>
+            </div>
+
+        </section>
+    </section>
+</template>

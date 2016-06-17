@@ -1,8 +1,12 @@
 /**
  * Created by iaman on 5/17/2016.
  */
-import {Mongo} from "meteor/mongo";
-import { SimpleSchema } from 'meteor/aldeed:simple-schema';
+import {
+    Mongo
+} from "meteor/mongo";
+import {
+    SimpleSchema
+} from 'meteor/aldeed:simple-schema';
 Products = new Mongo.Collection('products');
 
 
@@ -16,7 +20,7 @@ ProductsSchema = new SimpleSchema({
         type: String,
         label: 'Brand'
     },
-    Model: {
+    model: {
         type: String,
         label: 'Model number',
         min: 3

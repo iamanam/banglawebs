@@ -7,8 +7,3 @@ Meteor.publish("findOne", function(id) {
         _id: id
     });
 });
-Meteor.publish("findProductsById", () => {
-    return Products.find({
-        userOrdered: this.userId()
-    });
-})

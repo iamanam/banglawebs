@@ -25,7 +25,6 @@
                 </h3>
             </section>
         </div>
-        {{>domain_search}}
 
         <div class="feature-block">
             <section class="service-img-description">
@@ -67,7 +66,8 @@
                 <h2><strong>Site </strong> <span> features included but not limited to</span></h2>
 
                 <div class="view-pricing">
-                    {{#each packageTotal}} {{>blockPrice title=title price=price icon=icon features=featurePack }} {{/each}}
+                    {{#each packageTotal}} {{>blockPrice title=title price=price icon=icon features=featurePack
+                    }} {{/each}}
                 </div>
             </div>
 

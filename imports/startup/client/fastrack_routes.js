@@ -26,7 +26,25 @@ fastrackRoutes.route("/view_order", {
     action: () => {
         BlazeLayout.render("applayout", {
             top: "header_store",
-            main: "order_view",
+            main: "show_order",
+            footer: "footer"
+        });
+    }
+});
+fastrackRoutes.route("/track_order", {
+    action: () => {
+        BlazeLayout.render("applayout", {
+            top: "header_store",
+            main: "track_order",
+            footer: "footer"
+        });
+    }
+});
+fastrackRoutes.route("/track_order/:orderkey", {
+    action: () => {
+        BlazeLayout.render("applayout", {
+            top: "header_store",
+            main: "track_order",
             footer: "footer"
         });
     }

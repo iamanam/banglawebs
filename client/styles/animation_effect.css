@@ -1,0 +1,23 @@
+.double-flash {
+    animation: double-flash 4s ease 2;
+}
+@keyframes double-flash {
+    0% {
+        opacity: 1
+    }
+    12.5% {
+        opacity: 0
+    }
+    25% {
+        opacity: 1
+    }
+    37.5% {
+        opacity: 0
+    }
+    50% {
+        opacity: 1
+    }
+    100% {
+        opacity: 1
+    }
+}

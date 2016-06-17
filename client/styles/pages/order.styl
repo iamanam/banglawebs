@@ -4,17 +4,21 @@
 
 
 .fastrack_store
+  color black
   padding 2%
   width 90%
   margin 0 auto
   background aquamarine
-  color black
   font-family "Century Gothic", "Trebuchet MS"
   height 100%
   display: flex
   clearfix()
   +below(2)
     flex-direction: column-reverse
+    width: 100%
+    padding: 5px
+  +between(2,3)
+    width: 95%
   .order-form // section which holding the form and success message showing div
     display: block;
     position: relative
@@ -52,25 +56,182 @@
 
 // style end for sub content where people can put order
 
+//style for sub template view_order in order
+.order-list
+  display block
+  width 100%
+  position relative
+  h2
+    text-align center
+    font-style italic
+    text-transform uppercase
+    border-bottom 5px double #0f5aad
+    color cornflowerblue
+    width 65%
+    margin 20px auto
+    padding 5px
+    +below(2)
+      width 100%
+  .my-orders
+     display flex
+     width 100%
+     flex-direction column
+     .order-item
+       display flex
+       margin-bottom 15px
+       background white
+       flex-direction row
+       box-shadow 1px 2px 2px 2px rgb(140, 175, 163)
+       +below(2)
+         flex-direction: column
+       .text-details
+         flex 5 1
+         background #c5f3e7
+         .top-row,.main-row
+           display flex
+           justify-content space-between
+           div
+             display inline-flex
+             justify-content: center
+             span,p
+               margin 0
+               padding 0
+              span
+                font-weight bold
+                text-transform capitalize
+         .main-row
+           height 70%
+           +below(2)
+              flex-direction: column
+              height: 100%
+           div:first-child
+              width 40%
+              border-left none
+            div:nth-child(2)
+              width 30%
+            div:first-child,div:nth-child(2)
+            +below(2)
+               width: 100%
+           div
+             display flex
+             flex-direction column
+             width 15%
+             box-shadow 1px 2px 1px 0px rgba(52, 100, 142, 0.68)
+             +below(2)
+               width: 100%
+               margin-bottom: 10px
+               text-align: center
+             span
+               padding 5px
+               background #175a94
+               font-size 1.2rem
+               color aliceblue
+               +below(3)
+                 font-size: .9rem
+              p
+                padding 5px 10px
+                font-size 1rem
+                height: 100%
+                +below(2)
+                  font-size: .8rem
+              button
+                width 100%
+                height 100%
+                background #1a4fad
+                border 1px solid white
+                +below(2)
+                  padding: 8px
+                  background: #2196f3
+                a
+                  color white
+                  font-weight bold
+                  font-size 1.3rem
+                  text-decoration underline
+          .top-row
+            background cornflowerblue
+            font-size 90%
+            font-style italic
+            padding 5px 10px
+            height 30%
+            justify-content: space-around;
+            color: white
+            +below(2)
+              height: auto
+              margin: 5px 0
+              flex-direction: column
+            div
+              margin-right 15px
+              text-align: center
+              span
+                margin-right 5px
+      .image-details
+        flex 1 0
+        width 100%
+        height 120px
+        padding 5px
+        display block
+        text-align: center
+        .product-image
+          display block
+          width 100%
+          height 100%
+          img
+            height 100%
+
+
+
+
+
+
 // styles for order page when they are not logged in
-  h1
-    margin: 10px
-    border-bottom: 4px solid #48cfad
-    width: 50%
-    margin: 0 auto;
-    color: #009688
-  .external-service
-    width: 100%
-    margin: 10px 0
-    justify-content: center
-    
-.offer
-  h4
-    font-size: 20px
-    color: cadetblue
-  ul
-    padding: 0 20px
-    list-style-type: lower-roman
-    font-style: italic
-    li
-      font-size: 15px
+.fastrack_store
+    h1
+      margin: 10px
+      border-bottom: 4px solid #48cfad
+      width: 50%
+      margin: 0 auto;
+      color: #009688
+    .external-service
+      width: 100%
+      margin: 10px 0
+      justify-content: center
+
+  .offer
+    h4
+      font-size: 20px
+      color: cadetblue
+    ul
+      padding: 0 20px
+      list-style-type: lower-roman
+      font-style: italic
+      li
+        font-size: 15px
+
+
+//styles for track order page
+
+.track_order
+  flex-direction: column;
+  .order-list
+    margin: 15px 0
+  form
+    width: 75%
+    margin: 0 auto
+    outline: no
+    box-shadow: 2px 1px 3px 2px #62c7a5
+    background: #2196f3
+    +below(2)
+      width: 100%
+    label
+      text-transform: uppercase
+      font-size: 1.2rem
+      margin: 10px
+      color: aliceblue
+    fieldset
+      border: none
+      padding: 15px
+    input[type="submit"]
+      width: 100%;
+      font-size: 1.3rem
+      font-weight: bold
+      border-radius: 0

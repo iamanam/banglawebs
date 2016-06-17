@@ -58,24 +58,3 @@
     </div>
     {{/if}}
 </template>
-<template name="order_view">
-    <div class="fastrack_store">
-        {{#if currentUser}}
-        <section class="order_list">
-            <div class="view-product-demo">
-                {{#if Template.subscriptionsReady}} {{#with productByid}}
-                <p>{{title}}</p>
-                <img src="{{imageUrl}}" title="{{title}}">
-                <p>Price {{priceTaka}}tk
-                </p>
-                {{/with}} {{/if}}
-            </div>
-            {{#with orderedProductByUser}}
-            <h4>{{title}}</h4> {{/with}}
-        </section>
-        {{else}}
-        <h4>You have no order so far. See our proudcts for new order </h4>
-        <h5><a href="{{pathFor '/fastrack'}}">Check out our products</a></h5> {{/if}}
-
-    </div>
-</template>
