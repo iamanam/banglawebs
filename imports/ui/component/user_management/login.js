@@ -18,7 +18,7 @@ loginManagement.events = (helper) => {
                     //this will show the error recived from server
                     if (error) {
                         return helper.FormErrorCatcher(error);
-                    }
+                    }te
                 });
 
 

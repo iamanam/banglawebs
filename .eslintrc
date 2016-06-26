@@ -3,6 +3,7 @@
     "browser": true,
     "meteor": true
   },
+  "esversion":6,
   "ecmaFeatures": {
     "arrowFunctions": true,
     "blockBindings": true,

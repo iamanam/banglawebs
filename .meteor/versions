@@ -71,7 +71,7 @@ momentjs:moment@2.10.6
 mongo@1.1.7
 mongo-id@1.0.4
 mquandalle:stylus@1.1.1
-npm-bcrypt@0.8.5
+npm-bcrypt@0.8.6_1
 npm-mongo@1.4.43
 oauth@1.1.10
 oauth2@1.1.9

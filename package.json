@@ -1,21 +1,21 @@
 {
-    "name": "banglaweb",
-    "version": "0.9.0",
-    "private": true,
-    "git": "https://github.com/iamanam/banglawebs",
-    "scripts": {
-        "start": "meteor --settings settings.json --port 3000",
-        "test": "meteor test --driver-package practicalmeteor:mocha --port 3002"
-    },
-    "dependencies": {
-        "meteor-node-stubs": "^0.2.3",
-        "node-whois": "^2.1.3",
-        "whois": "^2.1.6"
-    },
-    "devDependencies": {
-        "tern-meteor": "^1.0.6"
-    },
-    "author": "iamanam",
-    "license": "ISC",
-    "description": "a production of banglawebs"
+  "name": "banglaweb",
+  "version": "0.9.0",
+  "private": true,
+  "git": "https://github.com/iamanam/banglawebs",
+  "scripts": {
+    "start": "meteor --settings settings.json --port 3000",
+    "test": "meteor test --driver-package practicalmeteor:mocha --port 3002"
+  },
+  "dependencies": {
+    "meteor-node-stubs": "^0.2.3"
+  },
+  "devDependencies": {
+    "postcss": "^5.0.21",
+    "stylelint": "^6.6.0",
+    "tern-meteor": "^1.0.6"
+  },
+  "author": "iamanam",
+  "license": "ISC",
+  "description": "a production of banglawebs"
 }

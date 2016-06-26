@@ -1,0 +1,374 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"nod",
+				"node_path	(Nodejs.sublime-settings)"
+			],
+			[
+				"esli",
+				"eslintrc"
+			],
+			[
+				"rea",
+				"README"
+			],
+			[
+				"node",
+				"node_modules"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"contents": "█ [ C:\\Users\\iaman ] pwd\n/c/Users/iaman\n\n█ [ C:\\Users\\iaman ] cd ../../E:\nDirectory path '../../E:' does not exist\n\n█ [ C:\\ ] cd ../../\nC:\\\n\n█ [ E:\\ ] cd E:\nE:\\\n\n█ [ E:\\banglawebs ] cd banglawebs\nE:\\banglawebs\n\n█ [ E:\\banglawebs ] meteor --settings settings.json\nWill get you a dev_bundle for windows_x86 version 0.6.15\nGoing to download the dependency kit from the Internet\nException calling \"DownloadFile\" with \"2\" argument(s): \"The remote name could not be resolved: \n'd3sqy0vbqsdhku.cloudfront.net'\"\nAt E:\\meteor\\scripts\\windows\\download-dev-bundle.ps1:33 char:1\n+ $webclient.DownloadFile($devbundle_link, $devbundle_zip)\n+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n    + CategoryInfo          : NotSpecified: (:) [], ParentContainsErrorRecordException\n    + FullyQualifiedErrorId : WebException\n \nselect-string : Cannot find path 'E:\\meteor\\dev_bundle\\.bundle_version.txt' because it does not exist.\nAt E:\\meteor\\scripts\\windows\\check-dev-bundle.ps1:10 char:20\n+ ... T_VERSION = select-string -Path ($CHECKOUT_DIR + \"\\dev_bundle\\.bundle ...\n+                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n    + CategoryInfo          : ObjectNotFound: (E:\\meteor\\dev_bundle\\.bundle_version.txt:String) [Select-String], ItemN \n   otFoundException\n    + FullyQualifiedErrorId : PathNotFound,Microsoft.PowerShell.Commands.SelectStringCommand\n \nThe system cannot find the file specified.\nWill get you a dev_bundle for windows_x86 version 0.6.15\nGoing to download the dependency kit from the Internet\nException calling \"DownloadFile\" with \"2\" argument(s): \"The remote name could not be resolved: \n'd3sqy0vbqsdhku.cloudfront.net'\"\nAt E:\\meteor\\scripts\\windows\\download-dev-bundle.ps1:33 char:1\n+ $webclient.DownloadFile($devbundle_link, $devbundle_zip)\n+ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n    + CategoryInfo          : NotSpecified: (:) [], ParentContainsErrorRecordException\n    + FullyQualifiedErrorId : WebException\n \nThe system cannot find the path specified.\n\n",
+			"settings":
+			{
+				"buffer_size": 2043,
+				"line_ending": "Windows",
+				"name": "terminal.glue"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 375.0,
+		"last_filter": "packa",
+		"selected_items":
+		[
+			[
+				"packa",
+				"Package Control: List Packages"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Advanced Install Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"lis",
+				"Package Control: List Packages"
+			],
+			[
+				"node",
+				"Nodejs::NPM::Command"
+			],
+			[
+				"disab",
+				"SublimeCodeIntel: Disable Plugin"
+			],
+			[
+				"subl",
+				"SublimeLinter: Clear Caches"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: in",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ins",
+				"Package Control: Install Package"
+			],
+			[
+				"list",
+				"Package Control: List Packages"
+			],
+			[
+				"remov",
+				"Package Control: Remove Package"
+			],
+			[
+				"brow",
+				"Preferences: Browse Packages"
+			]
+		],
+		"width": 514.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"node -v",
+			"meteor --v",
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/E/banglawebs",
+		"/E/banglawebs/both",
+		"/E/banglawebs/tests",
+		"/E/banglawebs/tests/mocha"
+	],
+	"file_history":
+	[
+		"/F/soft/ide/Sublime Text Build 3114 x64/Data/Packages/User/Default (Windows).sublime-keymap",
+		"/F/soft/ide/Sublime Text Build 3114 x64/Data/Packages/User/Preferences.sublime-settings",
+		"/F/soft/ide/Sublime Text Build 3114 x64/Data/Packages/Default/Preferences.sublime-settings",
+		"/F/soft/ide/Sublime Text Build 3114 x64/Data/Packages/Package Control/Package Control.sublime-settings",
+		"/E/banglawebs/.eslintrc",
+		"/F/soft/ide/Sublime Text Build 3114 x64/Data/Packages/User/JSON (JavaScriptNext).sublime-settings",
+		"/F/soft/ide/Sublime Text Build 3114 x64/Data/Packages/Default/Default (Windows).sublime-keymap",
+		"/E/banglawebs/jsconfig.json",
+		"/E/banglawebs/.meteor/release",
+		"/E/banglawebs/.meteor/versions",
+		"/F/soft/ide/Sublime Text Build 3114 x64/Data/Packages/Glue/keymaps/Default (Windows).sublime-keymap",
+		"/F/soft/ide/Sublime Text Build 3114 x64/Data/Packages/Glue/Glue.sublime-settings",
+		"/E/banglawebs/terminal.glue",
+		"/F/soft/ide/Sublime Text Build 3114 x64/Data/Packages/User/SublimeLinter.sublime-settings",
+		"/F/soft/ide/Sublime Text Build 3114 x64/Data/Packages/SublimeLinter/SublimeLinter.sublime-settings",
+		"/F/soft/ide/Sublime Text Build 3114 x64/Data/Packages/User/Glue.sublime-settings",
+		"/F/soft/ide/Sublime Text Build 3114 x64/Data/Packages/SublimeLinter/Default (Windows).sublime-keymap",
+		"/E/banglawebs/package.json",
+		"/F/soft/ide/Sublime Text Build 3114 x64/Data/Packages/Nodejs/Nodejs.sublime-settings",
+		"/E/banglawebs/sublime-project.sublime-project",
+		"/F/soft/ide/Sublime Text Build 3114 x64/Data/Packages/User/Nodejs.sublime-settings",
+		"/F/soft/ide/Sublime Text Build 3114 x64/Data/Packages/DashDoc/Default (Windows).sublime-keymap",
+		"/F/soft/ide/Sublime Text Build 3114 x64/Data/Packages/GotoDocumentation/Default (Windows).sublime-keymap",
+		"/F/soft/ide/Sublime Text Build 3114 x64/Data/Packages/DashDoc/DashDoc.sublime-settings",
+		"/F/soft/ide/Sublime Text Build 3114 x64/Data/Packages/User/DashDoc.sublime-settings",
+		"/F/soft/ide/Sublime Text Build 3114 x64/Data/Packages/User/ColorHighlighter.sublime-settings",
+		"/E/banglawebs/.gitignore",
+		"/F/soft/ide/Sublime Text Build 3114 x64/Data/Packages/User/Plain text.sublime-settings"
+	],
+	"find":
+	{
+		"height": 0.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2043,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2043,
+								2043
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content"
+							],
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.commandbox_output":
+	{
+		"height": 100.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.nodejs":
+	{
+		"height": 102.0
+	},
+	"pinned_build_system": "",
+	"project": "sublime-project.sublime-project",
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 261.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
