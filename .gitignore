@@ -1,11 +1,9 @@
 node_modules
 .atom
-
 .meteor/local
-
 .idea
-
 .vscode
 settings.json
-npm-debug.log 
+npm-debug.log
+ sublime-project.sublime-project
  

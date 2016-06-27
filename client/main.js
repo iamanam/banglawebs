@@ -1,6 +1,5 @@
-import "../imports/startup/client";
 import "../imports/api/client/index";
-
-Blaze.registerHelper("size",()=>{
-    return window.innerWidth <=400;
+import "../imports/startup/client";
+Blaze.registerHelper("size", () => {
+    return window.innerWidth <= 450;
 });

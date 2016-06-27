@@ -1,13 +1,16 @@
 <template name="mmenu">
     <nav id="menu">
         <ul>
-            <li>  <section class="login-extra" style="margin:10px">
-        {{#if size}}
-         {{>loginButtons}}
-         {{/if}}
-    </section>
-    </li>
-            <li><a href="/">Home</a></li>
+            {{#if size}}
+            <li>
+                <section class="login-extra" style="margin:10px">
+                    {{>initUserManagement}}
+                </section>
+            </li>
+            {{/if}}
+            <li>
+                <a href="/">Home</a>
+            </li>
             <li><a href="{{pathFor '/design'}}">Design</a></li>
             <li><a href="{{pathFor '/hosting'}}">Hosting</a></li>
             <li><a href="{{pathFor '/seo'}}">Seo</a></li>

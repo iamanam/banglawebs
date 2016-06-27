@@ -7,6 +7,8 @@ html
   height: 100%;
   box-sizing: border-box;
   font-size 1.5vw
+  +below(3)
+    font-size: 2.2vw
   +below(2)
     font-size 2.5vw
   +below(1)
@@ -22,6 +24,40 @@ Body
   font-family: "Advent pro"
   position: relative
   min-height: 100%
+
+
+//some global styles
+.other-options-stack
+  display: flex
+  div
+    display: flex
+    flex: 1
+    margin-right: 5px
+    background: #2196f3
+    height: 100px
+    padding: 8px
+    align-items: center
+    transition: .3s all .0s ease
+    +below(2)
+      padding: 0
+    &:hover
+      box-shadow: 1px 2px 3px 2px #2e618a
+    a
+      text-decoration: none
+      color black
+      font-size: 1.2rem
+      font-weight: bold
+      text-transform: uppercase;
+      display: flex;
+      flex-direction: column
+      text-align: center
+      margin: 0 auto
+      i
+        font-size: 2.5rem
+        color: white
+     span
+       color: white
+       margin: 5px
 
 //the div#header which contain header-head,header-main,header-tail
 footer

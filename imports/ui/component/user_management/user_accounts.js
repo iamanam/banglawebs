@@ -1,147 +1,116 @@
-import "./login.html";
-import "./signup.html";
+//importing html template
 import "./other.html";
 import "./user_accounts.html";
+import "./forgotpass";
+import "./resetpass";
+import "./signup";
+import loginManagement from "./login";
 
 
+function UserManagement() {
+    var self = this;
+    self.tabContainer = $(".tab-content");
+    self.tabSelector = $(".tab-select");
+    self.template = Template.user_management;
+    self.loginTem = Template.formLogIn;
+    self.initContent = Template.initUserManagement;
+    //starup function to add active class on tab but it won't be visibiable unless user click
+    self.setInitalTab = (visibleTab = Meteor.userId() ? "#dashboard" : "#login") => {
+        this.tabContainer.find(visibleTab).addClass("activeTab");
 
-if (Meteor.isClient) {
-    const visibleContentClass="activeTab";
-    //this function will set the tab to the default tab
-    const setIntialTab=(Template)=>{
-        const userTemplate=Meteor.userId()===null?"#login":"#dashboard";
-        if(Template){
-            return Template.$(userTemplate).addClass(visibleContentClass);
-        }
-        this.$(userTemplate).addClass(visibleContentClass);
     };
-    Template.login_init.onRendered(setIntialTab);
-
-    //this event will open or close the login div
-    Template.login_init.events({
-        "click .init_user": function(event, template){
+    self.initContent.events({
+        "click .init_user": function(event, template) {
             event.preventDefault();
-            let loginContent=template.$(".login-content");
-            loginContent.toggleClass("hide");
-            if(loginContent.find("."+visibleContentClass).length==0){
-                setIntialTab(template);
+            self.userContent = template.$(".login-content");
+            self.errorDiv = template.$(".error-field");
+            self.userContent.toggleClass("hide");
+            if (!self.userContent.hasClass("hide")) {
+                return Session.set("openForm", true)
             }
-        },
-        "click .tab-select a":(event,template)=>{
-            event.preventDefault();
-            let target=event.currentTarget.hash;
-            let tabContent=template.$(".tab-content");
-            tabContent.children("."+visibleContentClass).removeClass(visibleContentClass);
-            tabContent.find(target).addClass(visibleContentClass);
+            self.errorDiv.hide();
+            Session.set("openForm", false);
         }
     });
+    self.initContent.helpers({
+        "openForm": () => {
+            return Session.get("openForm");
+        }
+    })
+    self.FormErrorCatcher = (error, errorText) => {
+        if (error || errorText) {
+            return self.errorDiv.find("span").text(0).text(error.message || errorText).addClass("double-flash")
+                .addBack().show();
+        }
+    }
+};
 
-  //This event will be used to show off the hidden menu content
-    Template.formAddUser.events({
-        "submit form": function(event) {
-            event.preventDefault();
-            const userVar= event.target.registerUser.value;
-            const emailVar = event.target.registerEmail.value;
-            const passwordVar = event.target.registerPassword.value;
-            Accounts.createUser({
-                username:userVar,
-                email: emailVar,
-                password: passwordVar
-            });
-        }
-    });
 
-    Template.formLogIn.events({
-        "submit form": function(event){
-            event.preventDefault();
-            const emailVar = event.target.loginEmail.value;
-            const passwordVar = event.target.loginPassword.value;
-            Meteor.loginWithPassword(emailVar, passwordVar,(e)=>{
-                if(e){
-                    return;
-                }
-                $(".tab-content").children("."+visibleContentClass).removeClass(visibleContentClass)
-                .addBack().find("#dashboard").addClass(visibleContentClass);
-            });
-        },
-        "click .external-login":(event)=>{
-            event.preventDefault();
-            const service=$(event.currentTarget).attr("data-service");
-            if(service==="facebook"){
-                Meteor.loginWithFacebook();
-            }
-            console.log(event,service);
-        }
+//User management will inherit all the function from template user management have
+UserManagement.prototype = Object.create(Template.user_management);
+UserManagement.prototype.isValidAction = (action) => {
+    const actionsAllowed = ["#login", "#signup", "#resetPass", "#forgotPass", "#logout", "#dashboard"];
+    if (actionsAllowed.indexOf(action) === -1)
+        throw new Meteor.Error(403, "Action is forbidden");
+    return action;
+}
 
-    });
+ManageUserForm = new UserManagement();
+ManageUserForm.template.onRendered(function() {
+    UserManagement.call(this);
+    this.setInitalTab();
+    //set the session in the begining is important as sometime old session doesn't get clear
+    Session.set("openForm", false);
+})
 
-    Template.forgotPass.events({
-        "submit .forgotPassForm":(event,template)=>{
-            event.preventDefault();
-            const email=event.target.receivePass.value;
-            if(email)
-                Accounts.forgotPassword({email: email}, function(error){
-                    if(error){
-                        return template.$(".user_message").text("> "+error.reason);
-                    }
-                    template.$(".user_message").text("> Success!! Check your mail.");
-                });
-        }
-    });
-    Template.resetPass.events({
-        "submit .resetPassForm":(event,template)=>{
-            event.preventDefault();
-            const oldPass=event.target.oldPass.value;
-            const newPass=event.target.newPass.value;
-            if(Meteor.userId() && oldPass && newPass){
-                check(oldPass, String);
-                check(newPass, String);
-                Accounts.changePassword(oldPass, newPass, function(error){
-                    if(error){
-                        return template.$(".user_message").text("> "+error.reason);
-                    }
-                    template.$(".user_message").text("> Success!! Password has been reset.");
-                    Meteor.logout();
-                    setIntialTab(template);
-                });
-            }
-        }
-    });
-//this event is for logout
-    Template.dashboard.events({
-        "click .logout": function(event){
-            event.preventDefault();
-            Meteor.logout();
-        }
-    });
+//setting events for Template formLogIn or login template
+ManageUserForm.loginTem.events(loginManagement.events(ManageUserForm));
+
+
+ManageUserForm.template.events({
+    //this event is for logout button which has class of .logout
+    "click .logout": function(event) {
+        event.preventDefault();
+        Meteor.logout();
+        ManageUserForm.errorDiv.hide();
+    },
+    "click .tab-select a": function(event, template) {
+        event.preventDefault();
+        let action = ManageUserForm.isValidAction(event.currentTarget.hash);
+        console.log(action);
+        let container = template.$(".tab-content");
+        container.children(".activeTab").removeClass("activeTab");
+        container.children(action).addClass("activeTab");
+        ManageUserForm.errorDiv.hide();
+    }
+});
 
 //this is the required js for style the form
-    Template.user_management.rendered = () => {
-        $(".form").find("input, textarea").on("keyup blur focus", function(e) {
-            var $this = $(this),
-                label = $this.prev("label");
-            if (e.type === "keyup") {
-                if ($this.val() === "") {
-                    label.removeClass("active highlight");
-                } else {
-                    label.addClass("active highlight");
-                }
-            } else if (e.type === "blur") {
-                if ($this.val() === "") {
-                    label.removeClass("active highlight");
-                } else {
-                    label.removeClass("highlight");
-                }
-            } else if (e.type === "focus") {
-
-                if ($this.val() === "") {
-                    label.removeClass("highlight");
-                } else if ($this.val() !== "") {
-                    label.addClass("highlight");
-                }
+Template.user_management.rendered = () => {
+    $(".user-form").find("input, textarea").on("keyup blur focus", function(e) {
+        var $this = $(this),
+            label = $this.prev("label");
+        if (e.type === "keyup") {
+            if ($this.val() === "") {
+                label.removeClass("active highlight");
+            } else {
+                label.addClass("active highlight");
             }
+        } else if (e.type === "blur") {
+            if ($this.val() === "") {
+                label.removeClass("active highlight");
+            } else {
+                label.removeClass("highlight");
+            }
+        } else if (e.type === "focus") {
 
-        });
+            if ($this.val() === "") {
+                label.removeClass("highlight");
+            } else if ($this.val() !== "") {
+                label.addClass("highlight");
+            }
+        }
 
-    };
-}
+    });
+
+};

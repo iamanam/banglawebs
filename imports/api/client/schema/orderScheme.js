@@ -7,14 +7,21 @@ Order = new Mongo.Collection("order_watch");
 
 orderSchema = new SimpleSchema({
     mobile: {
-        type: Number,
+        type: String,
         label: "Put your mobile number",
-        min: 11
+        min: 11,
+        regEx: /^(?:\+88|01)?(?:\d{11}|\d{13})$/
     },
-    productOrdered:{
-        type:"String",
-        autoValue:()=>{
-            return FlowRouter.getParam("id");
+    userOrdered: {
+        type: "String",
+        autoValue: () => {
+            return Meteor.userId();
+        }
+    },
+    productOrdered: {
+        type: "String",
+        autoValue: () => {
+            return FlowRouter.getParam("productCode");
         }
     },
     OrderType: {
@@ -22,7 +29,7 @@ orderSchema = new SimpleSchema({
         allowedValues: ["Order", "Pre-order"]
     },
     bkash: {
-        type: Number,
+        type: "Number",
         label: "bkash wallet number (optional)",
         min: 11,
         optional: true

@@ -10,14 +10,15 @@
     "*/*.js",
     "*/*/*.js",
     "*/*/*/*.js",
-    "*/*/*/*/*.js"
-
+    "*/*/*/*/*.js",
+    "*/*/*/*/*/*/*.js",
+    "*/*/*/*/*/*.js"
   ],
   "dontLoad": [
     ".meteor/bundler-cache",
     "node-modules"
   ],
   "plugins": {
-    "meteor": "node_modules/tern-meteor/meteor.js"
+    "meteor": {}
   }
 }

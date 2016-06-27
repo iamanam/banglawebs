@@ -1,20 +1,26 @@
+/*
 .product-gallery-pro
   max-width: 960px
   margin: 0 auto
   font-family sans-serif
+  padding: 10px 20px
   h1
     font-size 35px
     font-weight 300
     flex 1
+    width: 100%
+    border-bottom: 3px solid white
+
   h5
     font-weight 500
     line-height 1.2rem
-    font-size: 1rem
     margin: 5px
-    +below(3)
-      font-size 115%
-    +below(2)
-      font-size 125%
+    a
+      font-size: 1rem
+      +below(3)
+        font-size 115%
+      +below(2)
+        font-size 125%
   h6
     color #666
     font-size 18px
@@ -24,18 +30,29 @@
     padding: 20px 10px
   .sort
     display flex
-    align-self flex-end
+    width: 100%
+    justify-content: space-between
   .collection-sort
     display flex
-    flex-direction column
+    flex-direction row
+    +below(2)
+      flex-direction: column
     &:first-child
       padding-right 20px
-  label
-    color #666
-    font-size 1rem
-    font-weight 500
-    line-height 2em
-    text-transform uppercase
+    label
+      color #666
+      font-size 1rem
+      font-weight 500
+      line-height 2em
+      text-transform uppercase
+      font-family: sans-serif
+      font-weight: bold
+      margin-right: 10px
+      margin-top: 5px
+      color: black
+    select
+      padding: 6px
+      border: 5px solid #48cfad
 
   .products
     display flex
@@ -47,10 +64,11 @@
     padding 2%
     flex 1 16%
     background-color #FFF
-    box-shadow 0px 0px 1px 0px rgba(0, 0, 0, 0.25)
+    box-shadow 0px 0px 1px 0px #48cfad
 
   .product-image
     display: flex
+    justify-content: center
     img
       width auto
       margin: 0 auto
@@ -68,6 +86,8 @@
       display: block
       font-size: 1.5rem
       width: 100%
+      border: none
+      background: b6dbe0
       a
         text-decoration: none;
 
@@ -91,3 +111,4 @@
         flex-direction column
       .sort
         align-self flex-start
+*/

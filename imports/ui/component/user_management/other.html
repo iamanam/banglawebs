@@ -1,10 +1,3 @@
-<template name="error">
-    <div class="field-wrap">
-        <label>
-            <span>{{error_num}} : {{error_reason}}</span>
-        </label>
-    </div>
-</template>
 <template name="forgotPass">
     <form class="forgotPassForm">
         <div class="field-wrap">
@@ -19,34 +12,34 @@
 </template>
 
 <template name="resetPass">
-    <form class="resetPassForm">
-        <div class="field-wrap">
+    <form class=" resetPassForm ">
+        <div class="field-wrap ">
             <label>
-                Old password <span class="req">*</span>
+                Old password <span class="req ">*</span>
             </label>
-            <input name="oldPass" type="text" required autocomplete="off" />
+            <input name="oldPass " type="text " required autocomplete="off " />
         </div>
-        <div class="field-wrap">
+        <div class="field-wrap ">
             <label>
-                New password <span class="req">*</span>
+                New password <span class="req ">*</span>
             </label>
-            <input name="newPass" type="text" required autocomplete="off" />
+            <input name="newPass " type="text " required autocomplete="off " />
         </div>
-        <h3 class="user_message"></h3>
+        <h3 class="user_message "></h3>
 
-        <button type="submit" class="button button-block">Change password</button>
+        <button type="submit " class="button button-block ">Change password</button>
 
     </form>
 </template>
-<template name="dashboard">
-    <div id="dashboard">
+<template name="dashboard ">
+    <div id="dashboard ">
         <p>You're logged in.</p>
-        <ul class="user-options">
-            <li class="tab-select">
-                <a href="#login" class="logout">Logout</a>
+        <ul class="user-options ">
+            <li class="tab-select ">
+                <a href="#login " class="logout ">Logout</a>
             </li>
-            <li class="tab-select">
-                <a href="#resetPass">Reset password</a>
+            <li class="tab-select ">
+                <a href="#resetPass ">Reset password</a>
             </li>
         </ul>
     </div>

@@ -1,3 +1,4 @@
+import "/imports/ui/pages/fastrack/user/user_fastrack.js";
 const fastrackRoutes = FlowRouter.group({
     name: "fastrack",
     prefix: "/fastrack"
@@ -5,7 +6,6 @@ const fastrackRoutes = FlowRouter.group({
 
 fastrackRoutes.route("/", {
     action: () => {
-        require("/imports/ui/pages/fastrack/user/products");
         BlazeLayout.render("applayout", {
             top: "header_store",
             main: "fastrackbd_pro",
@@ -15,7 +15,6 @@ fastrackRoutes.route("/", {
 });
 fastrackRoutes.route("/order/:productCode", {
     action: () => {
-        require("/imports/ui/pages/fastrack/user/order");
         BlazeLayout.render("applayout", {
             top: "header_store",
             main: "fastrackbd_order",
@@ -23,6 +22,34 @@ fastrackRoutes.route("/order/:productCode", {
         });
     }
 });
+fastrackRoutes.route("/view_order", {
+    action: () => {
+        BlazeLayout.render("applayout", {
+            top: "header_store",
+            main: "show_order",
+            footer: "footer"
+        });
+    }
+});
+fastrackRoutes.route("/track_order", {
+    action: () => {
+        BlazeLayout.render("applayout", {
+            top: "header_store",
+            main: "track_order",
+            footer: "footer"
+        });
+    }
+});
+fastrackRoutes.route("/track_order/:orderkey", {
+    action: () => {
+        BlazeLayout.render("applayout", {
+            top: "header_store",
+            main: "track_order",
+            footer: "footer"
+        });
+    }
+});
+
 /*
  Routes for fastrack admin groups
  */

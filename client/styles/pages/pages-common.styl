@@ -43,10 +43,10 @@
         //if its just a img instend of list
         img
           display block
-          width auto
+          width 100% !important
           margin 0 auto
-          +below(3)
-            width 100%
+          +above(3)
+            width auto
         ul
           list-style none
           text-decoration none
@@ -75,20 +75,16 @@
                 width 100%
                 position relative
                 margin-bottom 12px
-                img
-                  display block
-                  width auto
-                  height auto
-                  margin 0 auto
               figcaption
                 font-size 1.5rem
                 margin 15px 10px
-                color #25c6da
+                color #FFEB3B
                 transition all .3s ease
                 padding 0 5px
                 width 100%
                 text-align center
-
+                +below(3)
+                  font-size: 1.2rem
                 a
                   text-decoration none
               &:hover
