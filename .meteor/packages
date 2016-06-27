@@ -35,7 +35,7 @@ check
 aldeed:template-extension
 mdg:validated-method
 #oauth-encryption
-practicalmeteor:mocha
-dispatch:mocha-phantomjs
+#practicalmeteor:mocha
+#dispatch:mocha-phantomjs
 reactive-var
 ecmascript
